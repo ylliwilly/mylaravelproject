@@ -1,0 +1,15 @@
+
+    i.fa-star{
+      position: fixed;
+
+      color: #faec1b;
+      font-size: 1.2em;
+      font-weight: 900;
+      
+      text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+
+      font-style: normal;
+      font-variant: normal;
+      line-height: 1;
+      text-rendering: auto;
+    }

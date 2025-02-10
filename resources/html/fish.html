@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Swimming Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #87CEEB; /* 水蓝色背景，模拟海洋 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .fish {
+            width: 80px;
+            height: 40px;
+
+            position: absolute;
+            top: var(--swim-y);
+            left: var(--swim-x);
+
+            background-color: #ff9000;
+            /* background-image: url("file:///home/user/Downloads/fish.jpeg"); */
+            background-position: center center;
+            background-size: cover;
+            
+            border-radius: 20% 80% 0% 100% / 30% 100% 0% 70%;
+            box-shadow: 1px 5px 5px 0px rgb(80 134 122 / 50%);
+
+            transform: skewX(-15deg) rotate(-10deg);
+        
+            --rotate: -15deg;
+
+            --wave-time: 1s;
+            --tail-time: var(--wave-time);
+            --fin-time: 0.8s;
+
+            animation:  fish-wave var(--wave-time) alternate-reverse linear infinite both;
+                        /* swim 4s ease-in-out forwards; */
+            /* animation-play-state: paused; */
+
+            transform-origin: 20px center;
+            --rotate-time: 0.3s;
+            --swim-time: 4s;
+
+            transition: rotate var(--rotate-time) linear,
+                        top var(--swim-time) linear, 
+                        left var(--swim-time) linear;
+
+        }
+
+        /* 鱼的鰭 */
+        .fish::before,.fish::after {
+            content: '';
+
+            width: 20px;
+            height: 10px;
+
+            position: absolute;
+
+            background-color: #ff9000;
+            /* background-image: url("file:///home/user/Downloads/tail.jpg"); */
+            background-position: center center;
+            background-size: cover;
+            filter: blur(1.5px);
+            opacity: 0.6;
+
+            transform-origin: left center;
+
+            animation-duration:var(--fin-time);
+            animation-iteration-count:infinite;
+            animation-fill-mode:forwards;
+        }
+        .fish::before {
+
+            top: -3px;
+            left: 36px;
+           
+            border-radius: 7% 93% 23% 77% / 0% 48% 52% 100%;
+
+            animation-name: fin-wave-right;
+        }
+        .fish::after {
+
+            bottom: -9px;
+            left: 25px;
+
+            border-radius: 7% 93% 23% 77% / 0% 48% 52% 100%;
+
+            animation-name: fin-wave-left;
+        }
+
+        /* 鱼尾巴 */
+        .tail {
+            width: 30px;
+            height: 20px;
+
+            position: absolute;
+            top: 26px;
+            right: -24px;
+
+            background-color: #ff9000;
+            /* background-image: url("file:///home/user/Downloads/tail.jpg"); */
+            background-position: center center;
+            background-size: cover;
+            filter: blur(1.5px);
+            opacity: 0.8;
+
+            border-radius:0% 100% 12% 88% / 5% 66% 34% 95% ;
+
+            transform: rotate(10deg) skew(315deg);
+
+            transform-origin: left center;
+            animation: tail-wave var(--tail-time) ease-in-out infinite forwards;
+        }
+
+        /* 鱼的游动动画 */
+        @keyframes fish-wave {
+            0% {
+                transform: skewX(-15deg) rotate( calc(var(--rotate) + 15deg) );/*15*/
+            }
+
+            50% {
+                transform: skewX(-15deg) rotate( var(--rotate) );/*0*/
+            }
+
+            100% {
+                transform: skewX(-15deg) rotate( calc(var(--rotate) - 15deg) );/*-15*/
+            }
+        }
+        /* @keyframes swim {
+            0% {
+                left:var(--original-x);
+                top:var(--original-y);
+            }
+
+            100% {
+                left:var(--translate-x);
+                top:var(--translate-y);
+            }
+        } */
+
+        /* 鱼的尾巴摆动动画 */
+        @keyframes tail-wave {
+            0%, 100% {
+                transform: rotate(30deg) skew(15deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(-20deg) skew(30deg) translateY(10px);
+            }
+        }
+        @keyframes fin-wave-right {
+            0%, 100% {
+                transform: rotate(-25deg) skewX(25deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(-15deg) skewX(-7deg) translateY(5px);
+            }
+        }
+        @keyframes fin-wave-left {
+            0%, 100% {
+                transform: rotate(25deg) skewX(-25deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(15deg) skewX(7deg) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fish" data-number="0" style="--swim-x: 2000px;--swim-y: 500px;rotate: 0deg;">
+        <div class="tail"></div>
+    </div>
+    <div class="fish" data-number="1" style="--swim-x: 300px;--swim-y: 300px;rotate: 0deg;">
+        <div class="tail"></div>
+    </div>
+    <div class="fish" data-number="2" style="--swim-x: 1000px;--swim-y: 800px;rotate: 0deg;">
+        <div class="tail"></div>
+    </div>
+
+    <script>
+        var fish = document.querySelectorAll(".fish");
+        var fish_list = [
+                            [2000,500],
+                            [300,300],
+                            [1000,800]
+                        ];
+
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        var timeoutID = window.setInterval(( () =>{
+
+            for(let i=0; i<fish.length; i++){
+                
+                let swim_x = Math.floor(Math.random() * screenWidth);
+                let swim_y = Math.floor(Math.random() * screenHeight);
+
+                changePosition(i, swim_x, swim_y);
+            }
+            
+        }), 3000);
+
+        function angleBetweenVectors(A, B) {
+            const [Ax, Ay] = A;
+            var [Bx, By] = B;
+            Bx = Bx-Ax, By = By-Ay;
+
+            // 1. 计算点积 A · B = Ax * Bx + Ay * By
+            // const dotProduct = Ax * Bx + Ay * By;
+            const dotProduct = -Bx;
+
+            // 2. 计算模长 |A| 和 |B|
+            // const magnitudeA = Math.sqrt(Ax ** 2 + Ay ** 2);
+            const magnitudeA = Math.sqrt(1);
+            const magnitudeB = Math.sqrt(Bx ** 2 + By ** 2);
+
+            // 3. 计算 cos(θ)
+            const cosTheta = dotProduct / (magnitudeA * magnitudeB);
+
+            // 4. 计算夹角大小 (0° 到 180°)
+            let theta = Math.acos(cosTheta) * (180 / Math.PI); // 转换为角度
+
+            // 5. 计算叉积 A × B = Ax * By - Ay * Bx
+            // const crossProduct = Ax * By - Ay * Bx;
+            const crossProduct = -By;
+
+            // 6. 判断角度的方向
+            if (crossProduct < 0 && theta < 180) {
+                // 顺时针，角度为 360° - theta
+                theta = 360 - theta;
+                // theta = -theta;
+            }
+
+            return theta;
+        }
+
+        // 示例向量 A 和随机向量 B
+
+        // const angle = angleBetweenVectors([500,500], [1000,1000]);
+        // console.log(`角度差: ${angle}°`);
+
+        function changePosition(index, swim_x, swim_y){
+            let target_fish = fish[index];
+            let now_rotate = parseInt( target_fish.style.rotate.replace("deg","") );
+
+            let change_rotate = angleBetweenVectors(fish_list[index], [swim_x, swim_y]);
+
+            if( Math.abs(change_rotate-now_rotate) < 180){
+                target_fish.style.rotate =  change_rotate+"deg";
+                target_fish.style.setProperty("--swim-x", swim_x+"px");
+                target_fish.style.setProperty("--swim-y", swim_y+"px");  
+
+                fish_list[index][0] = swim_x;
+                fish_list[index][1] = swim_y;
+                console.log("change_rotate ",index," to ",change_rotate,"deg");
+            } else{
+                console.log("fail:",index,",rotate:",Math.abs(change_rotate-now_rotate),"deg");
+            }
+            
+        }   
+
+    </script>
+</body>
+</html>

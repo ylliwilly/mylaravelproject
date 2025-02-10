@@ -1,0 +1,151 @@
+body{
+  overflow-x: hidden;
+}
+
+.cloud {
+  --start-x:-100vw;
+  --end-x:100vw;
+  /* height: 60px;
+  width: 60px; */
+
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+
+  position: absolute;
+  /*top: 50%;
+   left: 50%; */
+  
+  /* margin-top: -30px;
+  margin-left: -30px; */
+  background: #FFFFFF;
+  
+}
+
+.cloud.back1 {
+  opacity: 0.8;
+  z-index: -1;
+
+  height: 5vw;
+  width: 6vw;
+
+  top: 45%;
+  left: 31%;
+
+  filter: blur(0.2vw);
+  box-shadow: 0.05vw 0.5vw 0.1vw 0.1vw #dfd7d9, 
+              1.5vw -1.5vw 0.1vw -0.45vw #FFFFFF, 
+
+              4.5vw -1.5vw 0vw 0.25vw #FFFFFF, 
+              4.75vw -0.75vw 0vw 0.25vw #dfd7d9, 
+
+              6.5vw 0.5vw 0vw -0.6vw #dfd7d9, 
+              4.25vw 2vw 0vw -0.65vw #dfd7d9,
+              1.5vw 2vw 0vw -1vw #dfd7d9;
+
+  --move-time: 40s;
+  animation: move var(--move-time) linear  -18s infinite;
+}
+.cloud.fornt1 {
+  /* z-index: 3; */
+
+  height: 32vw;
+  width: 38vw;
+
+  bottom: -15%;
+  left: -20%;
+
+  background: linear-gradient(to bottom, #FFFFFF 0%, #f3f3f3 70%, #dfd7d9 100%);
+  filter: blur(0.2vw);
+  box-shadow: 0.1vw 0.8vw 0.5vw 1vw #efefef, 
+
+              14vw 0vw 0.5vw -11vw #f5f1f1, 
+              14.5vw 1vw 1vw -11vw #f3f3f3, 
+
+              19vw 7vw 0vw -8.9vw #f3f3f3,
+              19.2vw 6.8vw 0vw -8.9vw #f1eeee, 
+              19.5vw 7.5vw 0.5vw -8.9vw #dfd7d9,  
+
+              29vw 13.5vw 1vw -9.6vw #dfe9e2,
+              29.5vw 13vw 0.2vw -9.6vw #f3f3f3, 
+
+              16vw 13vw 0.2vw -9.9vw #dfd7d9, 
+              /* 1vw 14vw 0.2vw -8.9vw #dfd7d9,  */
+              -9vw 8vw 0.8vw -2vw #ededed, 
+              -18vw 9vw 0.2vw -8.9vw #ededed;
+
+  
+  --start-x:-50vw;
+  --end-x:150vw;
+  animation: move 45s linear -13s infinite;
+}
+.cloud.fornt2{
+
+  height: 18vw;
+  width: 23vw;
+
+  bottom: -10%;
+  right: 15%;
+
+  background: linear-gradient(to right bottom, #FFFFFF 0%, #f3f3f3 80%, #dfd7d9 100%);
+  filter: blur(0.1vw);
+  box-shadow: 0.5vw 0.5vw 0.1vw 0.1vw #eee7ef, 
+              -8.5vw -3.5vw 0.1vw -4.45vw #fdfcfc, 
+              -14.5vw 4.5vw 0.1vw 0.25vw #fafbff, 
+              8.75vw 6.25vw 0.5vw 0.25vw #eee7ef;
+              /* 12.5vw 1.5vw 0vw -0.6vw #dfd7d9; */
+              /* 4.25vw 2vw 0vw -0.65vw #dfd7d9; */
+
+  animation: move 30s linear -18s infinite;
+}
+.cloud.top1{
+  height: 18vw;
+  width: 20vw;
+
+  top: -5vw;
+  left: -6vw;
+
+  filter: blur(0.1vw);
+  box-shadow: 0.5vw 1vw 0.5vw 0vw #eee7ef, 
+              8.5vw -7.5vw 0.1vw -4.45vw #fdfcfc, 
+              19.5vw -5.5vw 0.1vw 1.25vw #fafbff, 
+              29.75vw -2.75vw 0.1vw -1.75vw #fafbff, 
+              29.75vw 0.25vw 0.1vw 0.25vw #eee7ef, 
+              20.5vw 3.5vw 0.1vw 0.5vw #DFD7DB, 
+              4.25vw 2.8vw 0.1vw 2.35vw #dfd7d9;
+}
+.cloud.top2{
+  height: 18vw;
+  width: 20vw;
+
+  top: -8vw;
+  left: 50vw;
+}
+.cloud.top3{
+  height: 18vw;
+  width: 20vw;
+
+  top: -8vw;
+  right: 0vw;
+}
+.cloud.top2, .cloud.top3{
+  filter: blur(0.2vw);
+  box-shadow: 0.5vw 0.5vw 0.5vw 0vw #eee7ef, 
+              -11.5vw 4.5vw 0.2vw 0.25vw #fafbff, 
+              -7.5vw -3.5vw 0.2vw -4.45vw #fdfcfc, 
+              
+              10.5vw 4vw 0.5vw -1vw #eee7ef, 
+              10.5vw 3.5vw 0.2vw -0.6vw #fdfcfc, 
+
+              4.25vw 6vw 0.2vw -0.65vw #dfd7d9,
+              -3.25vw 6.25vw 0.2vw 0.25vw #dfd7d9;              
+}
+
+@keyframes move {
+  0%{
+    transform: translateX(var(--start-x));
+  }
+  100% {
+    transform: translateX(var(--end-x));
+  }
+}

@@ -1,0 +1,193 @@
+
+.card{
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50px;
+
+  background: radial-gradient(circle at center,#F2F2F2,#FFFFFF00);
+  /* border: 10px solid #F2F2F2; */
+
+  /* backdrop-filter: blur(20px); */
+
+  /* clip-path: polygon(10% 1%, 90% 1%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%); */
+  clip-path: polygon(10% 1%, 36% 3%, 100% 0, 100% 61%, 100% 100%, 10% 100%, 0 90%, 0 10%);
+}
+
+.card .image,
+.card .list{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.card .image{
+  grid-row-start: 1;
+  grid-row-end: 5;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* transition: ease-in 0.5s; */
+}
+
+.card .list{
+  grid-row-start: 5;
+  grid-row-end: 7;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card .list .thumbnail{
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+.card .list .thumbnail.chosen{
+  /* border: 5px dotted transparent; */
+  /* border-radius: 15px; */
+     -moz-border-image: -moz-linear-gradient(top left, #80e89b 0%, #009EFF 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, #80e89b 0%, #009EFF 100%);
+          border-image: linear-gradient(to bottom right, #80e89b 0%, #009EFF 100%);
+  border-image-slice: 11;
+  border-image-repeat: space;
+  border-image-width: 5px;
+}
+
+.card .head,
+.card .text,
+.card .specification,
+.card .shop{
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.card .head{
+  grid-row-start: 1;
+  grid-row-end: 1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .head .title{
+  font-size: 19px;
+  font-weight: 700;
+  color: #CB7E55;
+}
+.card .head .title span:nth-child(2){
+  font-size: 13px;
+  color: #000000;
+}
+
+.card .head .mode{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card .head .mode svg{
+  width: 15px;
+  height: 15px;
+
+  cursor: pointer;
+}
+
+.card .text{
+  grid-row-start: 2;
+  grid-row-end: 5;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+.card .text span{
+  flex-grow: 1;
+}
+
+.card .specification{
+  grid-row-start: 5;
+  grid-row-end: 5;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.card .specification .number{
+  font-size: 10px;
+}
+.card .specification .number input[type="number"]{
+  width: 3em;
+  font-size: 12px;
+}
+.card .specification .color{
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 10px;
+}
+.card .specification .color .circle{
+  width: 13px;
+  height: 13px;
+
+  border: 1px solid #000000;
+  border-radius: 99%;
+}
+
+.card .shop{
+  grid-row-start: 6;
+  grid-row-end: 6;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.card .shop .price{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 25px;
+  font-weight: bold;
+  color: #FF0606;
+}
+.card .shop .price .currency{
+  font-size: 8px;
+  color: #000000;
+}
+.card .shop .price .supplement{
+  font-size: 10px;
+  color: #829F83;
+}
+.card .shop .buy{
+  cursor: pointer;
+  
+  border-radius: 6px;
+  background-color: #5AA4B1;
+
+  padding: 5px 10px;
+
+  font-size: 15px;
+  color: snow;
+}
+
+
+
+

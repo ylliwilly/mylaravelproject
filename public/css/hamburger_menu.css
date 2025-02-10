@@ -1,0 +1,144 @@
+
+    /* 側邊欄 START */
+    #hamburger_sidebar{
+        width:15vw;
+        height: 100vh;
+
+        position: fixed;
+        left: -15vw;
+        top: 0;
+        z-index: 999;
+
+        background-color: hsla(0, 0%, 38%, 0.75);
+
+        transition: left 0.2s ease-in-out;
+    }
+
+    /* 漢堡選單 START */
+    #hamburger_sidebar .hamburger_menu{
+        /* width: 75px;
+        height: 120px; */
+        width: 11vw;
+        height: 10vw;
+
+        position: fixed;
+        left: 1vw;
+        top: 0;
+        /* z-index: 999; */
+
+        pointer-events: none;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        /* transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.575); */
+        /* transition-delay: 1.85s; */
+        filter: hue-rotate(70deg);
+    }
+    #hamburger_sidebar .hamburger_menu input {
+        cursor: pointer;
+        /* position: absolute; */
+        /* width: 13px;
+        height: 15px; */
+        width: 2.5vw;
+        height: 2.5vw;
+
+        z-index: 999;
+        opacity: 0;
+
+        pointer-events: auto;
+        
+        /* left: 50%; */
+        /* top: 50%; */
+        /* transform: translateX(-50%) translateY(-50%); */
+    }
+
+    #hamburger_sidebar .hamburger_menu svg {
+        /* height: 120px; */
+        height: 20vw;
+
+        pointer-events: none;
+
+        position: absolute;
+        left: 0;
+        bottom: -10vw;
+        
+        /* transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.575); */
+        transition: left 0.2s ease-in-out;
+        transition-delay: 0s;
+    }
+    #hamburger_sidebar .hamburger_menu svg:nth-of-type(2){
+        transform: translateY(1vw);
+    }
+
+    /* defalut狀態 -> 漢堡 */
+    #hamburger_sidebar .hamburger_menu svg path {
+        stroke: rgb(47 0 255);
+        stroke-width: 2px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-dasharray: 200px;
+        stroke-dashoffset: -169px;
+        
+        transition: stroke-dasharray 1.5s ease-in-out, stroke-dashoffset 1.5s ease-in-out, stroke 1.5s ease-in-out;
+    }
+    #hamburger_sidebar .hamburger_menu svg:nth-of-type(2) path{
+        transition: stroke-dasharray 0.25s ease-in-out, stroke-dashoffset 0.25s ease-in-out, stroke 0.25s ease-in-out;
+        transition-delay: 1.25s, 1.25s, 1.25s;
+    }
+    #hamburger_sidebar .hamburger_menu svg:nth-of-type(3) path {
+        stroke-dashoffset: -184px;
+
+        transition: stroke-dasharray 1.2s ease-in-out, stroke-dashoffset 1.2s ease-in-out, stroke 1.2s ease-in-out;
+        transition-delay: 0.3s, 0.3s, 0.3s;
+    }
+
+    /* 點擊狀態 -> 叉叉 */
+
+    #hamburger_sidebar .hamburger_menu input:checked ~ svg path {
+        stroke-dasharray: 200px;
+
+        stroke-dashoffset: 189px;
+
+        /* transition-delay: 0.5s, 0.5s; */
+        stroke: #ff8f8f;
+    }
+    #hamburger_sidebar .hamburger_menu input:checked ~ svg:nth-of-type(2) path{
+        stroke-dashoffset: -200px;
+        transition-delay: 0.5s, 0.5s;
+    }
+    #hamburger_sidebar .hamburger_menu input:checked ~ svg:nth-of-type(3) path {
+        /* transition-delay: 0.4s, 0.4s; */
+    }
+    /* 漢堡選單 END */
+
+    /* MENU START */
+    
+    #hamburger_sidebar .menu{
+        position: relative;
+        top: 12vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2vw;
+    }
+    #hamburger_sidebar .menu .page{
+        appearance: none;
+        background: transparent;
+        outline: none;
+        border: none;
+
+        cursor: pointer;
+
+        font-size: 3vw;
+        font-weight: bolder;
+        color: #F4A449;
+        -webkit-text-stroke: 2px #FFFFFF;
+        text-align: center;
+        text-shadow: 0px 0px 5px#FFFFFF;
+    }
+
+    /* MENU END */

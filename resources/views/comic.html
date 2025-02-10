@@ -1,0 +1,1371 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    
+  
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+  <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  
+  <title>Orange-cats-comic</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
+  <style>
+    body{
+      background: #F5F7FA;
+    }
+
+    #view_box.active{
+      padding:0 24vw;
+    }
+
+    .card_list {
+      width: 100vw;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(800px ,1fr));
+      grid-gap: 1vw;
+      /* grid-auto-flow: column; */
+
+      padding: 1vw;
+      transition: all 0.5s ease;
+    }
+
+    .card_list.expand{
+      min-width: fit-content;
+
+      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fit,minmax(800px,1fr));
+
+      padding: 5vh 0;
+
+      transform: translate3d(-500px, 0px, 0px);
+    }
+
+    .card_list .card {
+      --background:#FFFFFF;
+      --text:black;
+
+      position: relative;
+      z-index: 1;
+
+      height: fit-content; 
+      min-width: fit-content;
+      /* min-width: fit-content; */
+
+      box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.05);
+    }
+    
+    .card_list .card .multi-button {
+      z-index: 0;
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      border-radius: 100%;
+      width: 0rem;
+      height: 0rem;
+      transform: translate(-50%, -50%);
+      transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+    }
+    .card_list .card .multi-button button {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      border-radius: 100%;
+      background: var(--background);
+      color: var(--text);
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+      box-shadow: 0 0 0rem -0.25rem var(--background);
+    }
+    /*hover*/
+    .card_list .card:hover .container .eye_button{
+      visibility: visible;
+      stroke: black;
+    }
+
+    .card_list .card:hover .multi-button, .card_list .card .multi-button:focus-within {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .card_list .card .multi-button button:hover {
+      background: var(--text);
+      color: var(--background);
+      box-shadow: 0 0 1rem -0.25rem var(--background);
+    }
+    /*hover end*/
+    .card_list .card .container .eye_button{
+
+
+      width: 200px;
+
+      position: absolute;
+      visibility: hidden;
+
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+    }
+    .card_list .card .container .eye_button:hover{
+      stroke: #FF853A;
+      cursor: pointer;
+    }
+
+    .card_list .card .multi-button button:first-child:nth-last-child(1) {
+      left: 25%;
+      top: 25%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(2):nth-child(1), 
+    .card_list .card .multi-button button:first-child:nth-last-child(2) ~ *:nth-child(1) {
+      left: 37.5%;
+      top: 18.75%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(2):nth-child(2), 
+    .card_list .card .multi-button button:first-child:nth-last-child(2) ~ *:nth-child(2) {
+      left: 18.75%;
+      top: 37.5%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(3):nth-child(1), 
+    .card_list .card .multi-button button:first-child:nth-last-child(3) ~ *:nth-child(1) {
+      left: 50%;
+      top: 15.625%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(3):nth-child(2), 
+    .card_list .card .multi-button button:first-child:nth-last-child(3) ~ *:nth-child(2) {
+      left: 25%;
+      top: 25%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(3):nth-child(3), 
+    .card_list .card .multi-button button:first-child:nth-last-child(3) ~ *:nth-child(3) {
+      left: 15.625%;
+      top: 50%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(4):nth-child(1),
+    .card_list .card .multi-button button:first-child:nth-last-child(4) ~ *:nth-child(1) {
+      left: 62.5%;
+      top: 18.75%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(4):nth-child(2), 
+    .card_list .card .multi-button button:first-child:nth-last-child(4) ~ *:nth-child(2) {
+      left: 37.5%;
+      top: 18.75%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(4):nth-child(3), 
+    .card_list .card .multi-button button:first-child:nth-last-child(4) ~ *:nth-child(3) {
+      left: 18.75%;
+      top: 37.5%;
+    }
+    .card_list .card .multi-button button:first-child:nth-last-child(4):nth-child(4), 
+    .card_list .card .multi-button button:first-child:nth-last-child(4) ~ *:nth-child(4) {
+      left: 18.75%;
+      top: 62.5%;
+    }
+
+    .card_list .card .container {
+      min-width: 100%;
+      min-height: 100%;
+      /* width: 100%;
+      height: 100%; */
+      position: relative;
+
+      padding: 1rem;
+      border-radius: 1rem;
+      background: var(--background);
+      color: var(--text);
+    }
+    </style>
+    <style>
+      *, *:before, *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html, .card_list {
+        font-size: 62.5%;
+        height: 100%;
+      }
+      
+      button, input {
+        border: 0;
+        outline: none;
+      }
+      
+      body{
+        background: linear-gradient(45deg, #636f85, #6960a0);
+      }
+      
+      .demo {
+        display: none;
+
+        position: absolute;
+        z-index: -1;
+
+        top:0; /*50%;*/
+        left: 100%;
+        /* margin-top: -25rem; */
+        /*margin-left: -15rem; */
+        width: 30rem;
+        height:100%; /*50rem; */
+        box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.3);
+      }
+      
+      .static {
+        height: 100%;
+        font-size: 1.8rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+        background: transparent;
+      }
+      .static:before, .static:after {
+        content: "";
+        position: absolute;
+        left: 7rem;
+        width: 2rem;
+        height: 2rem;
+        margin-left: -1rem;
+        margin-top: -1rem;
+        border: 2px solid #fff;
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
+        -webkit-animation: arrows 1.5s infinite;
+                animation: arrows 1.5s infinite;
+      }
+      .static:before {
+        top: 15rem;
+      }
+      .static:after {
+        top: 35rem;
+      }
+      .static__text {
+        width: 9rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -5rem;
+        transform: translate3d(0, -50%, 0);
+        color: #fff;
+        perspective: 1px;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+      }
+      
+      .sidebar-content {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20rem;
+        height: 100%;
+        padding-top: 1rem;
+        opacity: 0;
+        transition: opacity 200ms, z-index 0s 0s;
+        background-color: #E9EAF3;
+        overflow: hidden;
+      }
+      .sidebar-content.active {
+        z-index: 2;
+        opacity: 1;
+      }
+      
+      .contact {
+        position: relative;
+        width: 100%;
+        height: 5rem;
+        padding-left: 1.7rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .contact__photo {
+        border-radius: 50%;
+        margin-right: 1.5rem;
+      }
+      .contact__name {
+        font-size: 1.2rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      }
+      .contact__status {
+        position: absolute;
+        top: 2.1rem;
+        right: 1.5rem;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #00B570;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .contact__status.online {
+        opacity: 1;
+      }
+      
+      .search {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5.5rem;
+        padding-left: 1.5rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+      }
+      
+      svg {
+        overflow: visible;
+      }
+      
+      .sidebar {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .s-path {
+        cursor: -webkit-grab;
+        cursor: grab;
+      }
+      
+      /* .cloned {
+        position: absolute;
+        z-index: 10;
+        transition: top 0.3s, left 0.3s;
+        transition-delay: 0.2s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      .cloned.removed {
+        transition: opacity 0.2s 0;
+        opacity: 0;
+      } */
+      
+      .chat {
+        display: none;
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2.5rem 0 5.5rem 2.5rem;
+        transition: opacity 200ms;
+        opacity: 0;
+      }
+      .chat.active {
+        opacity: 1;
+      }
+      .chat.active:before {
+        width: 100%;
+      }
+      .chat:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.5rem;
+        background: #1CC6AE;
+        width: 0;
+        transition: width 0.2s;
+      }
+      .chat__back {
+        position: relative;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-top: 0.5rem;
+        margin-left: -0.6rem;
+        cursor: pointer;
+      }
+      .chat__back:hover:before {
+        transform: translateX(-0.3rem) rotate(-45deg);
+      }
+      .chat__back:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0.4rem;
+        left: 0.6rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 2px solid #545675;
+        border-right: none;
+        border-bottom: none;
+        transform: rotate(-45deg);
+        transition: transform 0.3s;
+      }
+      .chat__status {
+        position: absolute;
+        top: 2rem;
+        right: 6.5rem;
+        font-size: 1.2rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        color: #B1A9A9;
+      }
+      .chat__person {
+        display: inline-block;
+        position: absolute;
+        top: 3rem;
+        right: 6.5rem;
+        font-size: 2rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+        color: #36343D;
+      }
+      .chat__online {
+        position: absolute;
+        top: 50%;
+        left: -1.5rem;
+        margin-top: -3px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #00B570;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .chat__online.active {
+        opacity: 1;
+      }
+      .chat__messages {
+        position: absolute;
+        top: 7.5rem;
+        left: 2.5rem;
+        width: 27.5rem;
+        height: 37rem;
+        padding-right: 2.5rem;
+        overflow-y: auto;
+      }
+      .chat__msgRow {
+        margin-bottom: 0.5rem;
+      }
+      .chat__msgRow:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .chat__message {
+        display: inline-block;
+        max-width: 60%;
+        padding: 1rem;
+        font-size: 1.4rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      }
+      .chat__message.mine {
+        color: #2B2342;
+        border: 1px solid #DFDFDF;
+      }
+      .chat__message.notMine {
+        float: right;
+        color: #23244E;
+        background: #E9EAF3;
+      }
+      .chat__input {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5.5rem;
+        padding: 1rem 1rem 1rem 4rem;
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-search.png");
+        background-repeat: no-repeat;
+        background-position: 1rem 1.5rem;
+        background-color: #E9EAF3;
+        color: #2B2342;
+        font-size: 1.4rem;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      }
+      
+      .ripple {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        margin-left: -5rem;
+        margin-top: -5rem;
+        background: rgba(0, 0, 0, 0.4);
+        transform: scale(0);
+        -webkit-animation: animRipple 0.3s;
+                animation: animRipple 0.3s;
+        border-radius: 50%;
+      }
+      
+      @-webkit-keyframes animRipple {
+        to {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes animRipple {
+        to {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+      @-webkit-keyframes arrows {
+        to {
+          transform: translateX(100%) rotate(45deg);
+          opacity: 0;
+        }
+      }
+      @keyframes arrows {
+        to {
+          transform: translateX(100%) rotate(45deg);
+          opacity: 0;
+        }
+      }
+      </style>
+      <style>
+        .img_block {
+          width: 800px;
+          height: 500px;
+
+          background-image: url("../picture/manga.jpg");
+          /* background-size: cover; */
+          background-origin: content-box;
+          background-repeat: no-repeat;
+
+          background-size: 800px 2000px;
+
+          
+          transition: 0.3s ease;
+        }
+        .container:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 50%;
+          bottom: 0;
+          left: 0;
+          transition: 0.3s ease;
+          background-image: linear-gradient(0deg, var(--background) 15%, transparent);
+        }
+        
+        .card.open .container .eye_button {
+          z-index: -1;
+        }
+
+        .card.open .container .img_block {
+          height: 2000px;
+        }
+
+        .card.open .container:before {
+          opacity: 0;
+          z-index: -200;
+        }
+
+        .card.open .demo{
+          display: unset;
+        }
+    </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+  </head>
+  <body>
+    <div id="view_box">
+      <div class="card_list" id="card_list">
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+              <path 
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+            </svg>
+
+          </div>
+
+
+        </div>
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+              <path 
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+            </svg>
+
+          </div>
+
+
+        </div>
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                <path 
+                  d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </path> 
+                <path 
+                  d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </path> 
+            </svg>
+
+          </div>
+        </div>
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+              <path 
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+            </svg>
+
+          </div>
+
+
+        </div>
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+              <path 
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+            </svg>
+
+          </div>
+
+
+        </div>
+
+        <div class="card" style="--background:#D9D9D9;--text:white;">
+
+          <div class="multi-button">
+            <button class="fas fa-heart"></button>
+            <button class="fas fa-comment"></button>
+          </div>
+          <div class="container">
+
+            <div class="img_block"></div>
+
+            <div class="demo">
+              <svg class="sidebar" viewBox="0 0 300 500">
+                <path class="s-path" fill="#fff" d="M0,0  a50,250 0 1,1 0,500 L0,500"></path>
+              </svg>
+              <span style="position: absolute;
+                            top: 50%;
+                            color: black;
+                            z-index: 1;
+                            -webkit-writing-mode: vertical-lr;
+                            writing-mode: vertical-lr;
+                            font-size: 30px;">
+                留言
+              </span>
+              <div class="static">
+                <div class="static__text">Pull white sidebar to the right</div>
+              </div>
+              <div class="sidebar-content">
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Ethan Hawke</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Natalie Portman</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Kevin Spacey</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Rosamund Pike</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Robert Redford</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Scarlett Johansson</span>
+                  <span class="contact__status online"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Tom Cruise</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-girl.png" alt="" class="contact__photo">
+                  <span class="contact__name">Eva Green</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="contact">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-man.png" alt="" class="contact__photo">
+                  <span class="contact__name">Paul Newman</span>
+                  <span class="contact__status"></span>
+                </div>
+                <div class="search">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/elastic-srch.png" alt="" class="search__img">
+                  <input type="text" class="search__input" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <svg class="eye_button" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path 
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+              <path 
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              </path> 
+            </svg>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  <!-- 動臉 -->
+    <script src="https://codepen.io/z-/pen/jvReOb/a8e37caf2a04602ea5815e5acedab458.js"></script>
+    <link href="https://codepen.io/z-/pen/a8e37caf2a04602ea5815e5acedab458.css" rel="stylesheet">
+
+    <div style="position:fixed;bottom:-5rem;right:-5rem;" id="user-button">
+      <div class="u-icons" style="position:absolute;z-index:950;top:50%;left:50%;width:0;height:0%;opacity:0;">
+        <a id="socialbutton-twitter" href="https://twitter.com/zed_dash" target="_top" rel="no-refer">
+          <div class="u-card fab fa-twitter"></div>
+        </a>
+        <a href="https://codepen.io/z-" target="_blank">
+          <div class="u-card fab fa-codepen"></div>
+        </a>
+        <a class="u-random" href="https://codepen.io/z-/details/XPQyMo" target="_blank" style="background:white">
+          <div class="u-card fas fa-dice-one"></div>
+        </a>
+      </div>
+
+      <div class="u-card u-main" style="position:relative;z-index:1000;width:4rem;height:4rem;display:grid;place-items:center;background:var(--user-button-background)">
+        <a href="https://codepen.io/z-" target="_blank">
+          <img src="https://i.koya.io/S70jhQ.webp" style="border-radius:100%; width:64px; height:64px;">
+        </a>
+      </div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  <!-- 引用js -->
+    <script>
+
+      var cardList = document.getElementById("card_list");
+      var viewBox = document.getElementById("view_box");
+
+      $(cardList).find(".card .eye_button").on("click",function (e) {
+        viewBox.classList.add('active');
+        cardList.classList.add('expand');
+
+        let $this_card = $(e.currentTarget).parents(".card");
+        $this_card.addClass("open");
+        $this_card.siblings().removeClass("open");
+
+        initResize();
+      });
+      $(cardList).find(".card .fa-comment").on("click",function (e) {
+        viewBox.classList.add('active');
+        cardList.classList.add('expand');
+
+        let $this_card = $(e.currentTarget).parents(".card");
+        $this_card.addClass("open");
+        $this_card.siblings().removeClass("open");
+
+        $this_card.find(`.sidebar-content`).addClass("active");
+
+        initResize();
+      });
+
+      function removeResize(){
+        $(window).off("resize");
+        $(document).off("mousedown")
+        $(document).off("mousedown touchstart");
+        $(document).off("mouseup touchend");
+        $(document).off("click");
+        $path.off("mousedown touchstart");
+      }
+
+      function initResize(){
+        if(typeof $sCont != "undefined"){
+          $sCont.removeClass("active");
+          removeResize();
+        }
+        
+        let $card = $(cardList).find(".card.open");
+        console.log($card);
+        
+        $demo = $card.find(".demo");/*整個*/
+        demoTop = $demo.offset().top;
+        demoLeft = $demo.offset().left;
+        $path = $card.find(".s-path");
+        $svg = $card.find(".sidebar");
+        $sCont = $card.find(".sidebar-content");
+        $chat = $card.find(".chat");
+        diffX = 0;
+        curX = 0;
+        finalX = 0;
+        frame = 1000 / 60;
+        animTime = 600;
+        sContTrans = 200;/*計時器用*/
+        animating = false;
+
+        startD = createD(0, 50, 1);
+        finalD = createD(200, 0, 1);/*展開後*/
+        midD = createD(125, 75, 0);
+        currentPath = createD(0, 0, 1);//startD;
+
+        handlers1();
+
+        $(window).on("resize", function () {
+          demoTop = $demo.offset().top;
+          demoLeft = $demo.offset().left;
+        });
+
+        if($sCont.hasClass("active")){
+          setTimeout(function () {
+            $(document).on("click", closeSidebar);
+          }, sContTrans);
+        }
+      }
+  
+      /*留言funtion*/
+        var easings = {
+          /* easingX(curStep, curX, finalX - curX, steps)*/
+          smallElastic: function (t, b, c, d) {
+            var ts = (t /= d) * t;
+            var tc = ts * t;
+            return b + c * (33 * tc * ts + -106 * ts * ts + 126 * tc + -67 * ts + 15 * t);
+          },
+          inCubic: function (t, b, c, d) {
+            var tc = (t /= d) * t * t;
+            return b + c * tc;
+          } 
+        };
+
+        function createD(top, ax, dir) {
+          return "M0,0 " + top + ",0 a" + ax + ",250 0 1," + dir + " 0,500 L0,500";
+        }
+
+        function handlers1() {
+
+          $path.on("mousedown touchstart", function (e) {
+            var startX = e.pageX || e.originalEvent.touches[0].pageX;
+
+            $(document).on("mousemove touchmove", function (e) {
+              var x = e.pageX || e.originalEvent.touches[0].pageX;
+              diffX = x - startX;
+              console.log(diffX );
+              if (diffX < 0) diffX = 0;
+              if (diffX > 300) diffX = 300;
+              curX = 50+Math.floor(diffX / 2);/*最小50*/
+              $path.attr("d", newD(curX));
+            });
+          });
+
+          $(document).on("mouseup touchend", function () {
+            $(document).off("mousemove touchmove");
+            if (animating) return;
+            if (!diffX) return;
+            if (diffX < 50) {/*拉多少*/
+              animatePathD($path, newD(50), animTime, true);/*開始50*/
+            } else {
+              animatePathD($path, finalD, animTime, false, function () {
+                $sCont.addClass("active");
+                setTimeout(function () {
+                  $(document).on("click", closeSidebar);
+                }, sContTrans);
+              });
+            }
+          });
+        }
+
+        function newD(num1, num2) {
+          var d = $path.attr("d"),
+          num2 = num2 || 250,
+          nd = d.replace(/\ba(\d+),(\d+)\b/gi, "a" + num1 + "," + num2);
+          return nd;
+        }
+
+        function animatePathD(path, d, time, handlers, callback, easingTop, easingX) {
+          var steps = Math.floor(time / frame),
+          curStep = 0,
+          oldArr = currentPath.split(" "),
+          newArr = d.split(" "),
+          oldLen = oldArr.length,
+          newLen = newArr.length,
+          oldTop = +oldArr[1].split(",")[0],
+          topDiff = +newArr[1].split(",")[0] - oldTop,
+          nextTop,
+          nextX,
+          easingTop = easings[easingTop] || easings.smallElastic,
+          easingX = easings[easingX] || easingTop;
+
+          $(document).off("mousedown mouseup");
+
+          function animate() {
+            curStep++;
+            nextTop = easingTop(curStep, oldTop, topDiff, steps);
+            nextX = easingX(curStep, curX, finalX - curX, steps);/*抖動？*/
+            oldArr[1] = nextTop + ",0";
+            oldArr[2] = "a" + Math.abs(nextX) + ",250";
+            oldArr[4] = nextX >= 0 ? "1,1" : "1,0";
+            $path.attr("d", oldArr.join(" "));
+            if (curStep > steps) {
+              curX = 0;
+              diffX = 0;
+              $path.attr("d", d);
+              currentPath = d;
+              if (handlers) handlers1();
+              if (callback) callback();
+              return;
+            }
+            requestAnimationFrame(animate);
+          }
+          animate();
+        }
+
+        function closeSidebar(e) {
+          console.log($(animating));
+          // if ($(e.target).closest(".sidebar-content").length ||
+          // $(e.target).closest(".chat").length) return; /*Element.closest() : 最近祖先/自身*/
+          if (animating) return;
+          animating = true;
+          $sCont.removeClass("active");
+          finalX = -75;
+          setTimeout(function () {
+            animatePathD($path, midD, animTime / 3, false, function () {
+              $chat.hide();
+
+              finalX = 50;/*改了這個彈回去才會是50,但中途也是50?*/
+              curX = -75;
+              animatePathD($path, startD, animTime / 3 * 2, true);
+              animating = false;
+            }, "inCubic");
+          }, sContTrans);
+          $(document).off("click", closeSidebar);
+        }
+      /*留言funtion end*/
+
+    </script> 
+  </body>
+  </html>

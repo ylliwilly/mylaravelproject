@@ -1,0 +1,204 @@
+
+*::selection {
+  background: #ff8b00;
+  color: #fff;
+  text-shadow: none;
+}
+* {
+box-sizing: border-box;
+}
+
+body {
+font-family: "Lato", sans-serif;
+touch-action: manipulation;
+}
+
+.non-select{
+  user-select: none;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+  -moz-user-select: none;
+}
+
+.hero {
+width: 100%;
+min-height: 450px;
+position: relative;
+top: 0;
+left: 0;
+background-color: #d9edfd;
+}
+
+.layer-6 {
+-webkit-animation: parallax_fg linear 120s infinite both;
+        animation: parallax_fg linear 120s infinite both;
+background: url("../picture/trees-6207925_1920.jpg") 0 100% repeat-x;
+z-index: 1;
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+/* background-size: cover; */
+} 
+
+.cat-1,
+.cat-2,
+.boat-1,
+.boat-2 {
+
+z-index: 1;
+position: absolute;
+bottom: 100px;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
+.cat-1 {
+background: url("../picture/little_orange_cat.png") 0 100% no-repeat;
+-webkit-animation: parallax_cat linear 10s infinite both;
+        animation: parallax_cat linear 10s infinite both;
+background-size: auto 75px;
+}
+.boat-1 {
+background: url("../picture/boat-6079223_1920.png") 0 100% no-repeat; 
+
+-webkit-animation: parallax_cat linear 10s infinite both;
+        animation: parallax_cat linear 10s infinite both;
+background-size: auto 100px;
+bottom: 50px;
+left: -20px;
+}
+
+.cat-2 {
+background: url("../picture/big_orange_cat.png") 0 100% no-repeat;
+-webkit-animation: parallax_cat linear 15s infinite both;
+        animation: parallax_cat linear 15s infinite both;
+background-size: auto 90px;
+}
+.boat-2 {
+background: url("../picture/boat-307603_1920.png") 0 100% no-repeat; 
+
+-webkit-animation: parallax_cat linear 15s infinite both;
+        animation: parallax_cat linear 15s infinite both;
+background-size: auto 150px;
+bottom: 80px;
+left: -10px;
+}
+
+
+
+
+@-webkit-keyframes parallax_fg {
+0% {
+  background-position: 2765px 100%;
+}
+100% {
+  background-position: 550px 100%;
+}
+}
+
+@keyframes parallax_fg {
+0% {
+  background-position: 2765px 100%;
+}
+100% {
+  background-position: 550px 100%;
+}
+}
+@-webkit-keyframes parallax_cat {
+0% {
+  background-position: -300px 100%;
+}
+100% {
+  background-position: 2000px 100%;
+}
+}
+@keyframes parallax_cat {
+0% {
+  background-position: -300px 100%;
+}
+100% {
+  background-position: 2000px 100%;
+}
+}
+.logo {
+margin: 70px auto;
+position: absolute;
+z-index: 2;
+width: 100%;
+}
+.logo img {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+}
+@media (max-width: 700px) {
+.logo img {
+  max-width: 90%;
+}
+}
+
+nav {
+background-color: #12212f;
+overflow: hidden;
+}
+nav ul {
+list-style: none;
+max-width: 900px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+nav li {
+padding: 10px 20px;
+}
+@media (max-width: 700px) {
+nav li {
+  width: 50%;
+  text-align: center;
+}
+}
+nav li >a ,nav summary{
+/* Tilmelding: */
+font-weight: 700;
+font-size: 1.25em;
+text-transform: uppercase;
+color: #fff;
+text-decoration: none;
+}
+
+.dark-bg {
+background-color: #12212f;
+padding: 50px 50px;
+}
+.dark-bg img {
+display: block;
+margin: 0 auto;
+width: auto;
+max-width: 100%;
+}
+
+.light-bg {
+background-color: rgb(98 135 129);
+/* padding: 50px 50px; */
+}
+.light-bg img {
+display: block;
+margin: 0 auto;
+width: auto;
+max-width: 100%;
+height: 100%;
+}
+
+.extra {
+max-width: 700px;
+margin: 0 auto;
+font-size: 18px;
+color: #12202F;
+letter-spacing: 0px;
+line-height: 27px;
+}

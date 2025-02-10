@@ -1,0 +1,27 @@
+.language_filed{
+  display: flex;
+  align-items: center;
+}
+.language_filed > *{
+  margin: 0 !important;
+  outline: 0 !important;
+}
+a:focus, .bootstrap-select .btn:focus{
+  outline: 0 !important;
+}
+
+.skiptranslate {
+    display: none;
+}
+.goog-logo-link {
+    display: none !important;
+}
+.goog-te-gadget {
+    color: transparent !important;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+a[href="https://translate.google.com"] {
+    display: none !important;
+}

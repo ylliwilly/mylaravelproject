@@ -1,0 +1,24 @@
+
+.nowrap_row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.nowrap_column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.nowrap_row.vertical,
+.nowrap_column.vertical{
+    justify-content: center;
+}
+.nowrap_row.horizontal,
+.nowrap_column.horizontal{
+    align-items: center;
+}
+
+.nowrap_row.between,
+.nowrap_column.between{
+    justify-content: space-between;
+}
