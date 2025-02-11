@@ -167,6 +167,8 @@
   .navbar .logo::before {
       display: inline-block;
       vertical-align: top;
+      min-height: 7rem;
+      min-width: 7rem;
       height: 60px;
       width: 60px;
       background: url("../picture/Group2.png") no-repeat center center;
