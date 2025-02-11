@@ -12,7 +12,7 @@
 
     <title>橘貓橘貓窩</title>
 
-    <link href="css/header.css" type="text/css" rel="stylesheet"><!--topbar-->
+    <link href="css/header.css?v1" type="text/css" rel="stylesheet"><!--topbar-->
     <link href="css/loader.css" type="text/css" rel="stylesheet"><!--字-->
     <link href="css/footer_introduction.css" type="text/css" rel="stylesheet"><!--footer-->
     <link href="css/special_button.css" type="text/css" rel="stylesheet"><!--button-->

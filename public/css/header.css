@@ -109,6 +109,8 @@
     -webkit-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
     -moz-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
     box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+
+    margin: 0 !important;
   }
   
   .sticky {
@@ -225,9 +227,11 @@
     @media (max-width: 800px) {
         nav.sticky.navbar{
             display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
   
         .navbar .brand{
