@@ -33,6 +33,8 @@ body {
   align-items: center;
   justify-content: flex-start;
 
+  overflow-y: auto;
+
 }
 </style>
 
