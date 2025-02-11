@@ -27,7 +27,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
     padding: 40px 0;
+
+    overflow: auto;
   }
   
   .container .box
