@@ -8,13 +8,20 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+//報表系統 - 渠道關鍵字
+Route::controller(AuthenticatedSessionController::class)->group(function ()
+{
+    Route::post('/login', 'store')->middleware('guest')->name('login'); //登入
+    Route::post('/logout', 'destroy')->middleware('auth')->name('logout'); //登出
+});
+
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
                 ->name('register');
 
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('guest')
-                ->name('login');
+// Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+//                 ->middleware('guest')
+//                 ->name('login');
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')
@@ -32,6 +39,6 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
                 ->middleware(['auth', 'throttle:6,1'])
                 ->name('verification.send');
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('auth')
-                ->name('logout');
+// Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+//                 ->middleware('auth')
+//                 ->name('logout');

@@ -29,32 +29,28 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 // Route::get('/', function () {
 //     return ['Laravel' => app()->version()];
 // });
-Route::get('/', [WebController::class, 'jump_Introduction']);
-Route::get('/home', [WebController::class, 'jump_Home']);
-Route::get('/about_us', [WebController::class, 'jump_About_us']);
-Route::get('/comic', [WebController::class, 'jump_Comic']);
 
-Route::get('/collections', [WebController::class, 'jump_Collections']);
-Route::get('/works', [WebController::class, 'works']);
-Route::get('/collections_gallery', [WebController::class, 'jump_Collections_gallery']);
+Route::controller(WebController::class)->group(function ()
+{
+    Route::get('/', 'jump_Introduction'); //簡介
+    Route::get('/home', 'jump_Home'); //主頁
+    Route::get('/about_us', 'jump_About_us'); //關於我們
+    Route::get('/comic', 'jump_Comic'); //漫畫
 
-Route::get('/sales', [WebController::class, 'jump_Sales']);
-Route::get('/commodity_case', [WebController::class, 'jump_Commodity_Case']);
-Route::get('/commodity_sales', [WebController::class, 'jump_Commodity_Sales']);
-Route::get('/commodity_sticker', [WebController::class, 'jump_Commodity_Sticker']);
+    Route::get('/collections', 'jump_Collections'); //作品集
+    Route::get('/works', 'works'); //手工藝品
+    Route::get('/collections_gallery', 'jump_Collections_gallery'); //作品合集
 
+    Route::get('/sales', 'jump_Sales'); //販賣
+    Route::get('/commodity_case', 'jump_Commodity_Case'); //接案
+    Route::get('/commodity_sales', 'jump_Commodity_Sales'); //商品頁
+    Route::get('/commodity_sticker', 'jump_Commodity_Sticker'); //貼圖
 
-Route::get('/Alikoi', [WebController::class, 'jump_Alikoi']);
+    Route::get('/Alikoi', 'jump_Alikoi'); //小
 
-Route::get('/register', [WebController::class, 'jump_Register']);
-
-// require __DIR__.'/auth.php';
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/home', function () {
-//         return view('home');
-//     })->name('dashboard');
-// });
+    Route::get('/register', 'jump_Register'); //註冊頁
+    
+});
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -83,3 +79,31 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+
+// Route::get('/', [WebController::class, 'jump_Introduction']);
+// Route::get('/home', [WebController::class, 'jump_Home']);
+// Route::get('/about_us', [WebController::class, 'jump_About_us']);
+// Route::get('/comic', [WebController::class, 'jump_Comic']);
+
+// Route::get('/collections', [WebController::class, 'jump_Collections']);
+// Route::get('/works', [WebController::class, 'works']);
+// Route::get('/collections_gallery', [WebController::class, 'jump_Collections_gallery']);
+
+// Route::get('/sales', [WebController::class, 'jump_Sales']);
+// Route::get('/commodity_case', [WebController::class, 'jump_Commodity_Case']);
+// Route::get('/commodity_sales', [WebController::class, 'jump_Commodity_Sales']);
+// Route::get('/commodity_sticker', [WebController::class, 'jump_Commodity_Sticker']);
+
+
+// Route::get('/Alikoi', [WebController::class, 'jump_Alikoi']);
+
+// Route::get('/register', [WebController::class, 'jump_Register']);
+
+// require __DIR__.'/auth.php';
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/home', function () {
+//         return view('home');
+//     })->name('dashboard');
+// });
