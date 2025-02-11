@@ -330,7 +330,7 @@ svg {
 #toggleOpen:checked
   ~ #welcomeMessage {
       font-size: 100%;    
-      margin-top: 10%;
+      margin-top: 10em;
 }
 
 #toggleOpen:checked

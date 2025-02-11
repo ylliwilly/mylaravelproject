@@ -12,8 +12,8 @@
 
   <title>橘貓橘貓窩</title>
 
-  <link href="css/menu.css?v1" type="text/css" rel="stylesheet">
-  <link href="css/claw.css?v2" type="text/css" rel="stylesheet">
+  <link href="css/menu.css?v2" type="text/css" rel="stylesheet">
+  <link href="css/claw.css?v3" type="text/css" rel="stylesheet">
 
 <style>
 * {
@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 
 }
 </style>

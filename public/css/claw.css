@@ -1,6 +1,6 @@
 
   :root{
-    --box-width: 320px;
+    --box-width: 35vh;
     --box-height: 50vh;
     --before-width: calc(var(--box-width) * 0.5);
     --before-height: calc(var(--box-height) * 1);
@@ -23,6 +23,8 @@
   
   .container
   {
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +32,7 @@
 
     padding: 40px 0;
 
-    overflow: auto;
+    flex: 1 1;
   }
   
   .container .box
