@@ -13,7 +13,7 @@
   <title>橘貓橘貓窩</title>
 
   <link href="css/menu.css?v1" type="text/css" rel="stylesheet">
-  <link href="css/claw.css?v1" type="text/css" rel="stylesheet">
+  <link href="css/claw.css?v2" type="text/css" rel="stylesheet">
 
 <style>
 * {
