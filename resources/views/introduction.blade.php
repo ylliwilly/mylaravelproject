@@ -14,7 +14,7 @@
 
     <link href="css/header.css?v3" type="text/css" rel="stylesheet"><!--topbar-->
     <link href="css/loader.css" type="text/css" rel="stylesheet"><!--字-->
-    <link href="css/footer_introduction.css" type="text/css" rel="stylesheet"><!--footer-->
+    <link href="css/footer_introduction.css?v1" type="text/css" rel="stylesheet"><!--footer-->
     <link href="css/special_button.css" type="text/css" rel="stylesheet"><!--button-->
     <link href="css/exquisite_button.css" type="text/css" rel="stylesheet"><!--exquisite_button-->
     <link href="css/multi_button.css" type="text/css" rel="stylesheet"><!--multi_button.css-->
