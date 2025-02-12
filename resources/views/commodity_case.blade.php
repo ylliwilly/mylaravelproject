@@ -225,7 +225,7 @@
             <h1>插</h1>
             <h1>畫</h1> -->
         </div>
-        <div class="cloud back1" style="top:90%; transform: scale(1.3);--move-time:38s;"></div>
+        <div class="cloud back1" style="top:90%; --move-time:38s;"></div>
         <i class="fa-solid fa-plane" style="--fly-time: 10s;
                                             --start-rotate: 150deg;
                                             --start-x: 100%;
@@ -279,7 +279,7 @@
             <h1>設</h1>
             <h1>計</h1> -->
         </div>
-        <div class="cloud back1" style="top:25%; transform: scale(0.5);--move-time:35s;"></div>
+        <div class="cloud back1" style="top:25%; --move-time:35s;"></div>
         <i class="fa-solid fa-plane" style="--fly-time: 8s;
                                             --start-rotate: 45deg;
                                             --start-x: 0%;
