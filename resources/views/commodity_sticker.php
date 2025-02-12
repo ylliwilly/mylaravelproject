@@ -42,6 +42,10 @@
         -webkit-transition: all 0.4s ease-in;
       }
 
+      .cloude{
+        animation-direction: reverse !important;
+      }
+
     </style>
 
     <script>
