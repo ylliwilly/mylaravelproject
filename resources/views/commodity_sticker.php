@@ -78,6 +78,7 @@
     </div>
     <!-- 側邊欄 END -->
 
+    <div class="cloud fornt1" style="top:25%; transform: scale(0.5);--move-time:35s;"></div>
     <div class="cloud back1" style=""></div>
     <div class="cloud back1" style="top:25%; transform: scale(0.5);--move-time:35s;"></div>
     
