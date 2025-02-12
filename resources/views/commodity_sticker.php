@@ -83,9 +83,9 @@
     </div>
     <!-- 側邊欄 END -->
 
-    <div class="cloud top1" style=""></div>
-    <div class="cloud top2" style=""></div>
-    <div class="cloud top3" style=""></div>
+    <div class="cloud back1" style=""></div>
+    <div class="cloud back2" style=""></div>
+    <div class="cloud back3" style=""></div>
 
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
