@@ -191,7 +191,7 @@ body {
         <div class="content">
           <h2>貼圖</h2>
           <p>橘貓橘貓窩line貼圖預覽～～</p>
-          <a onclick="ChangePage(this,'sales')">進入</a>
+          <a onclick="ChangePage(this,'commodity_sticker')">進入</a>
           <!-- 'commodity_case' -->
         </div>
       </div>
