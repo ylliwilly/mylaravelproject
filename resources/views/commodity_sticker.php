@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
-    <link href="css/scroll_word.css" type="text/css" rel="stylesheet"><!--字-->
-    <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/box.css" type="text/css" rel="stylesheet"><!--box-->
-
     <title>橘貓橘貓窩</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -25,8 +21,8 @@
         box-sizing: border-box;
       }
       body {
-        background: linear-gradient(to bottom, #ff0058 -40%, #8556DE, #2561A5);
-        background-image: -webkit-linear-gradient(#ff0058 -40%, #8556DE, #2561A5 );
+        background: linear-gradient(to bottom, #FF5C1C -40%, #FF1C1C, #EBDF63);
+        background-image: -webkit-linear-gradient(#FF5C1C -40%, #FF1C1C, #EBDF63 );
         
         background-repeat: no-repeat;
         background-size: cover;
