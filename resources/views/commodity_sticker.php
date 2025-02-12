@@ -79,7 +79,7 @@
     <!-- 側邊欄 END -->
 
     <div class="cloud back1" style=""></div>
-
+    <div class="cloud back1" style="top:25%; transform: scale(0.5);--move-time:35s;"></div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
