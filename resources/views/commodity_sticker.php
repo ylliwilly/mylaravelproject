@@ -40,12 +40,7 @@
 
         transition: all 0.4s ease-in;
         -webkit-transition: all 0.4s ease-in;
-
-        opacity: 0;
-        transform: translateY(50%);
       }
-
-      
 
     </style>
 
@@ -84,8 +79,6 @@
     <!-- 側邊欄 END -->
 
     <div class="cloud back1" style=""></div>
-    <div class="cloud back2" style=""></div>
-    <div class="cloud back3" style=""></div>
 
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
