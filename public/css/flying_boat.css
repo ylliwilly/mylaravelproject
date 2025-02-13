@@ -1,4 +1,4 @@
-.fish {
+.flying_boat {
     width: 45vw;
     height: 25vw;
 
@@ -13,7 +13,7 @@
     background-size: cover;
 
     transform: translateY(0);
-    
+
     --fly-time: 10s;
 
     animation: fly-in var(--fly-time) 1 linear normal backwards;
