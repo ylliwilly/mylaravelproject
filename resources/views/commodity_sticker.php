@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502131752" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -87,13 +87,7 @@
     <div class="cloud back1" style="--move-time:30s;"></div>
     <div class="cloud back1" style="top:25%; transform: scale(1.2);"></div>
 
-    <div class="flying_boat" style="">
-      <div class="wing1"></div> <!--機翼-->
-      <div class="screen"></div> <!--屏幕-->
-      <div class="airframe"></div> <!--機身-->
-      <div class="wing2"></div> <!--機翼-->
-      <div class="cabin"></div> <!--機艙-->
-    </div>
+    <div class="flying_boat"></div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">

@@ -1,201 +1,52 @@
 .fish {
-    width: 80px;
-    height: 40px;
+    width: 45vw;
+    height: 25vw;
 
     position: absolute;
-    top: var(--swim-y);
-    left: var(--swim-x);
+    top: 10vh;
+    left: -100vw;
     z-index: 1;
 
     background-color: #ff9000;
-    /* background-image: url("file:///home/user/Downloads/fish.jpeg"); */
+    background-image: url("../picture/flying_boat.svg");
     background-position: center center;
     background-size: cover;
+
+    transform: translateY(0);
     
-    border-radius: 20% 80% 0% 100% / 30% 100% 0% 70%;
-    box-shadow: 1px 5px 5px 0px rgb(80 134 122 / 50%);
+    --fly-time: 10s;
 
-    transform: skewX(-15deg) rotate(-10deg);
-
-    --rotate: -15deg;
-
-    --wave-time: 1s;
-    --tail-time: var(--wave-time);
-    --fin-time: calc(var(--wave-time)*0.8);
-
-    animation:  fish-wave var(--wave-time) alternate-reverse linear infinite both;
-                /* swim 4s ease-in-out forwards; */
-    /* animation-play-state: paused; */
-
-    transform-origin: 20px center;
-    --rotate-time: 0.3s;
-    --swim-time: 4s;
-
-    transition: rotate var(--rotate-time) linear,
-                top var(--swim-time) linear, 
-                left var(--swim-time) linear;
-
-}
-.fish.big{
-    width: 85px;
-    height: 45px;
-}
-.fish.small{
-    width: 55px;
-    height: 30px;
-}
-
-/* 鱼的鰭 */
-.fish::before,.fish::after {
-    content: '';
-
-    width: 20px;
-    height: 10px;
-
-    position: absolute;
-
-    background-color: #ff9000;
-    /* background-image: url("file:///home/user/Downloads/tail.jpg"); */
-    background-position: center center;
-    background-size: cover;
-    filter: blur(1.5px);
-    opacity: 0.6;
-
-    transform-origin: left center;
-
-    animation-duration:var(--fin-time);
-    animation-iteration-count:infinite;
-    animation-fill-mode:forwards;
-}
-.fish.big::before, .fish.big::after{
-    width: 25px;
-    height: 15px;
-}
-.fish.small::before, .fish.small::after{
-    width: 15px;
-    height: 5px;
-}
-.fish::before {
-    top: -3px;
-    left: 36px;
-   
-    border-radius: 7% 93% 23% 77% / 0% 48% 52% 100%;
-
-    animation-name: fin-wave-right;
-}
-.fish.big::before{
-    top: -3px;
-    left: 36px;
-}
-.fish.small::before{
-    top: -1px;
-    left: 24px;
-}
-
-.fish::after {
-    bottom: -9px;
-    left: 25px;
-
-    border-radius: 7% 93% 23% 77% / 0% 48% 52% 100%;
-
-    animation-name: fin-wave-left;
-}
-.fish.big::after{
-    bottom: -9px;
-    left: 25px;
-}
-.fish.small::after{
-    bottom: -8px;
-    left: 20px;
+    animation: fly-in var(--fly-time) 1 linear normal backwards;
+    animation: fly-wave var(--fly-time) alternate-reverse linear infinite both;
 }
 
 
-/* 鱼尾巴 */
-.tail {
-    width: 25px;
-    height: 18px;
-
-    position: absolute;
-    top: 26px;
-    right: -25px;
-
-    background-color: #ff9000;
-    /* background-image: url("file:///home/user/Downloads/tail.jpg"); */
-    background-position: center center;
-    background-size: cover;
-    filter: blur(1.5px);
-    opacity: 0.8;
-
-    border-radius:0% 100% 12% 88% / 5% 66% 34% 95% ;
-
-    transform: rotate(10deg) skew(315deg);
-
-    transform-origin: left center;
-    animation: tail-wave var(--tail-time) ease-in-out infinite forwards;
-}
-.fish.big .tail{
-    width: 35px;
-    height: 25px;
-
-    top: 32px;
-    right: -23px;
-}
-.fish.small .tail{
-    width: 25px;
-    height: 15px;
-
-    top: 21px;
-    right: -24px;
-}
-
-/* 鱼的游动动画 */
-@keyframes fish-wave {
+/* 船飛入 */
+@keyframes fly-in {
     0% {
-        transform: skewX(-15deg) rotate( calc(var(--rotate) + 15deg) );/*15*/
+        left: -100vw;
     }
 
     50% {
-        transform: skewX(-15deg) rotate( var(--rotate) );/*0*/
+        left: 0vw;
     }
 
     100% {
-        transform: skewX(-15deg) rotate( calc(var(--rotate) - 15deg) );/*-15*/
+        left: 25vw;
     }
 }
-/* @keyframes swim {
+
+/* 船上下飄動 */
+@keyframes fly-wave {
     0% {
-        left:var(--original-x);
-        top:var(--original-y);
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(0);
     }
 
     100% {
-        left:var(--translate-x);
-        top:var(--translate-y);
-    }
-} */
-
-/* 鱼的尾巴摆动动画 */
-@keyframes tail-wave {
-    0%, 100% {
-        transform: rotate(30deg) skew(15deg) translateY(0px);
-    }
-    50% {
-        transform: rotate(-20deg) skew(30deg) translateY(10px);
-    }
-}
-@keyframes fin-wave-right {
-    0%, 100% {
-        transform: rotate(-25deg) skewX(25deg) translateY(0px);
-    }
-    50% {
-        transform: rotate(-15deg) skewX(-7deg) translateY(5px);
-    }
-}
-@keyframes fin-wave-left {
-    0%, 100% {
-        transform: rotate(25deg) skewX(-25deg) translateY(0px);
-    }
-    50% {
-        transform: rotate(15deg) skewX(7deg) translateY(-5px);
+        transform: translateY(-10px);
     }
 }
