@@ -1,13 +1,14 @@
 .flying_boat {
     width: 45vw;
-    height: 25vw;
+    /* height: 25vw; */
+    aspect-ratio: 9/5;
 
     position: absolute;
     top: 10vh;
     left: -100vw;
     z-index: 1;
 
-    background-color: #ff9000;
+    /* background-color: #ff9000; */
     background-image: url("../picture/flying_boat.svg");
     background-position: center center;
     background-size: cover;
@@ -17,7 +18,7 @@
     --fly-time: 10s;
 
     animation: fly-in var(--fly-time) 1 linear normal backwards;
-    animation: fly-wave var(--fly-time) alternate-reverse linear infinite both;
+    /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
 }
 
 
