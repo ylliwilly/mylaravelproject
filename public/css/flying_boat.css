@@ -17,7 +17,8 @@
 
     --fly-time: 10s;
 
-    animation: fly-in var(--fly-time) 1 linear normal backwards;
+    animation: fly-in var(--fly-time) 1 linear normal forwards,
+                fly-wave var(--fly-time) alternate-reverse linear infinite both;
     /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
 }
 
