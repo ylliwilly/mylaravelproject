@@ -96,7 +96,7 @@
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
-      var src = "./picture/gif/too_many.gif";
+      var src = "./picture/gif/positive.gif";
 
       var timeoutID = setInterval(changeScreen, 10000);
       function changeScreen() {
