@@ -98,7 +98,7 @@
     <script type="text/javascript">
       var src = "./picture/gif/positive.gif";
 
-      var timeoutID = setInterval(changeScreen, 10000);
+      var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
         let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
         let originalSrc = images[0].src;
