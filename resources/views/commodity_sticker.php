@@ -88,7 +88,10 @@
     <div class="cloud back1" style="top:25%; transform: scale(1.2);"></div>
 
     <div class="flying_boat">
-      <img src="./picture/draw_blood.png">
+      <div class="screen">
+        <img src="./picture/draw_blood.png">
+        <img src="./picture/draw_blood.png">
+      </div>
     </div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
