@@ -89,8 +89,8 @@
 
     <div class="flying_boat">
       <div class="screen">
-        <img src="./picture/draw_blood.png">
-        <img src="./picture/draw_blood.png">
+        <img src="./picture/gif/too_many.gif">
+        <img src="./picture/gif/too_many.gif">
       </div>
     </div>
     
