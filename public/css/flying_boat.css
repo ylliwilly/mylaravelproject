@@ -1,18 +1,19 @@
 .flying_boat {
-    width: 45vw;
+    --fly-boat: 45vw;
+    width: var(--fly-boat);
     /* height: 25vw; */
     aspect-ratio: 89/58;
 
     position: absolute;
     top: 12vh;
-    left: -45vw;
+    left: calc(-var(--fly-boat));
     z-index: 1;
 
     /* background-color: #ff9000; */
     background-image: url("../picture/flying_boat.svg");
     background-position: center center;
     background-size: cover;
-
+    
     transform: translateY(0);
 
     --fly-time: 10s;
@@ -21,6 +22,13 @@
     animation: fly-in var(--fly-time) 1 linear normal forwards,
                 fly-wave var(--wave-time) alternate-reverse ease-in-out infinite both;
     /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
+}
+.flying_boat div img{
+    width: calc(var(--fly-boat)*0.444);
+
+    position: relative;
+    top: calc(var(--fly-boat)*0.115);
+    left: calc(var(--fly-boat)*0.333);
 }
 
 
