@@ -96,7 +96,18 @@
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
-      
+      var src = "./picture/gif/too_many.gif";
+
+      var timeoutID = setInterval(changeScreen, 10000);
+      function changeScreen() {
+        let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
+        let originalSrc = images[0].src;
+        for(const image of images){
+          image.src = src;
+        }
+        src = originalSrc;
+      }
+  
     </script>
 
   </body>
