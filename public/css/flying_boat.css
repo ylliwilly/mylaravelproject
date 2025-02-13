@@ -4,8 +4,8 @@
     aspect-ratio: 89/58;
 
     position: absolute;
-    top: 10vh;
-    left: -100vw;
+    top: 12vh;
+    left: -45vw;
     z-index: 1;
 
     /* background-color: #ff9000; */
@@ -29,11 +29,6 @@
     0% {
         left: -45vw;
     }
-
-    65% {
-        left: 0vw;
-    }
-
     100% {
         left: 25vw;
     }
