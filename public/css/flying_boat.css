@@ -16,9 +16,10 @@
     transform: translateY(0);
 
     --fly-time: 10s;
+    --wave-time: 10s;
 
     animation: fly-in var(--fly-time) 1 linear normal forwards,
-                fly-wave var(--fly-time) alternate-reverse linear infinite both;
+                fly-wave var(--wave-time) alternate-reverse ease-in-out infinite both;
     /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
 }
 
@@ -26,10 +27,10 @@
 /* 船飛入 */
 @keyframes fly-in {
     0% {
-        left: -100vw;
+        left: -45vw;
     }
 
-    50% {
+    65% {
         left: 0vw;
     }
 
@@ -41,7 +42,7 @@
 /* 船上下飄動 */
 @keyframes fly-wave {
     0% {
-        transform: translateY(10px);
+        transform: translateY(1vh);
     }
 
     50% {
@@ -49,6 +50,6 @@
     }
 
     100% {
-        transform: translateY(-10px);
+        transform: translateY(-1vh);
     }
 }
