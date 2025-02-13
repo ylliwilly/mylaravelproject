@@ -16,7 +16,7 @@
     transform: translateY(0);
 
     --fly-time: 10s;
-    --wave-time: 10s;
+    --wave-time: 5s;
 
     animation: fly-in var(--fly-time) 1 linear normal forwards,
                 fly-wave var(--wave-time) alternate-reverse ease-in-out infinite both;
@@ -30,14 +30,14 @@
         left: -45vw;
     }
     100% {
-        left: 25vw;
+        left: 27vw;
     }
 }
 
 /* 船上下飄動 */
 @keyframes fly-wave {
     0% {
-        transform: translateY(1vh);
+        transform: translateY(2vh);
     }
 
     50% {
@@ -45,6 +45,6 @@
     }
 
     100% {
-        transform: translateY(-1vh);
+        transform: translateY(-2vh);
     }
 }
