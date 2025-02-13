@@ -88,7 +88,7 @@
     <div class="cloud back1" style="top:25%; transform: scale(1.2);"></div>
 
     <div class="flying_boat">
-      <img src="">
+      <img src="./picture/draw_blood.png">
     </div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
