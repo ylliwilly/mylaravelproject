@@ -110,12 +110,10 @@
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
         let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
-        let originalSrc = images[0].src;
+        src = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
         for(const image of images){
           image.src = src;
         }
-
-        src = srcList[(srcList.indexOf(originalSrc)+1)%(srcList.length)];
       }
   
     </script>
