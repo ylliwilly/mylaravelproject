@@ -96,7 +96,14 @@
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
-      var src = "./picture/gif/positive.gif";
+
+      var srcList = [
+        "./picture/gif/too_many.gif",
+        "./picture/gif/positive.gif",
+        "./picture/gif/draw.gif",
+        "./picture/gif/big.gif",
+        "./picture/gif/dog.gif",
+      ];
 
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
@@ -105,7 +112,8 @@
         for(const image of images){
           image.src = src;
         }
-        src = originalSrc;
+
+        src = srcList(srcList.indexOf(originalSrc)+1)%(srcList.length);
       }
   
     </script>
