@@ -115,7 +115,7 @@
           image.src = src;
         }
 
-        src = srcList(srcList.indexOf(originalSrc)+1)%(srcList.length);
+        src = srcList[(srcList.indexOf(originalSrc)+1)%(srcList.length)];
       }
   
     </script>

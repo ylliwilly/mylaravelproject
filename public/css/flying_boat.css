@@ -20,8 +20,8 @@
     --fly-time: 10s;
     --wave-time: 5s;
 
-    animation: fly-in var(--fly-time) 1 linear normal forwards,
-                fly-wave var(--wave-time) alternate-reverse ease-in-out infinite both;
+    animation: fly-wave var(--wave-time) alternate-reverse ease-in-out infinite both,
+                fly-in var(--fly-time) 1 linear normal forwards;
     /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
 }
 
