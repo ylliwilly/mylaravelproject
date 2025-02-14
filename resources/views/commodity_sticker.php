@@ -100,9 +100,9 @@
       var srcList = [
         "https://orange-cats.work/picture/gif/too_many.gif",
         "https://orange-cats.work/picture/gif/positive.gif",
-        "https://orange-cats.work/picture/gif/draw.gif",
+        // "https://orange-cats.work/picture/gif/draw.gif",
         "https://orange-cats.work/picture/gif/big.gif",
-        "https://orange-cats.work/picture/gif/dog.gif",
+        // "https://orange-cats.work/picture/gif/dog.gif",
       ];
 
       var timeoutID = setInterval(changeScreen, 11000);
