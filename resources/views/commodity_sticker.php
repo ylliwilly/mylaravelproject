@@ -109,8 +109,7 @@
       function changeScreen() {
         let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
         let changeSource = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
-        console.log("index = ",(srcList.indexOf(images[0].src)+1)%(srcList.length));
-        console.log("src = ", changeSource);
+        console.log("src = ", images[0].src);
         for(const image of images){
           image.src = changeSource ;
         }
