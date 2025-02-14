@@ -105,6 +105,8 @@
         "./picture/gif/dog.gif",
       ];
 
+      var src = srcList[0];
+
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
         let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
