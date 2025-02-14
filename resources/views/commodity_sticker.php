@@ -98,7 +98,6 @@
     <script type="text/javascript">
 
       var srcList = [
-        https://orange-cats.work/picture/gif/too_many.gif
         "https://orange-cats.work/picture/gif/too_many.gif",
         "https://orange-cats.work/picture/gif/positive.gif",
         "https://orange-cats.work/picture/gif/draw.gif",
