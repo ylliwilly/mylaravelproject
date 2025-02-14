@@ -105,15 +105,14 @@
         "./picture/gif/dog.gif",
       ];
 
-      var src = srcList[0];
-
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
         let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
-        src = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
-        console.log("src = ",src);
+        let changeSource = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
+        console.log("index = ",(srcList.indexOf(images[0].src)+1)%(srcList.length));
+        console.log("src = ", changeSource);
         for(const image of images){
-          image.src = src;
+          image.src = changeSource ;
         }
       }
   
