@@ -82,6 +82,7 @@
 /* Banner Start */
 .flying_boat div.banner{
     position: absolute;
+    top: calc(var(--fly-boat)* 0.26);
     right: var(--fly-boat);
 }
 .flying_boat div.banner div.line{
