@@ -25,6 +25,32 @@
     /* animation: fly-wave var(--fly-time) alternate-reverse linear infinite both; */
 }
 
+/* 船飛入 */
+@keyframes fly-in {
+    0% {
+        left: -45vw;
+    }
+    100% {
+        left: 27vw;
+    }
+}
+
+/* 船上下飄動 */
+@keyframes fly-wave {
+    0% {
+        transform: translateY(2vh);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-2vh);
+    }
+}
+
+/* Screen Start */
 .flying_boat div.screen{
     width: calc(var(--fly-boat)*0.42);
     height: calc(var(--fly-boat)* 0.37);
@@ -51,28 +77,53 @@
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
     transform: perspective(60vw) rotateX(-20deg);
 }
+/* Screen END */
 
-/* 船飛入 */
-@keyframes fly-in {
-    0% {
-        left: -45vw;
-    }
-    100% {
-        left: 27vw;
-    }
+/* Banner Start */
+.flying_boat div.banner{
+    position: absolute;
+    right: var(--fly-boat);
+}
+.flying_boat div.banner div.line{
+    width: calc(var(--fly-boat)*0.2);
+    height: 0.5vh;
+
+    background-color: rgb(52, 22, 3);
+
+    transform-origin: center right;
+
+    position: absolute;
+    right: 0;
+
+    animation: line-rotate var(--wave-time) infinite ease-in-out;
 }
 
-/* 船上下飄動 */
-@keyframes fly-wave {
-    0% {
-        transform: translateY(2vh);
-    }
-
-    50% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-2vh);
-    }
+.flying_boat div.banner span{
+    width: 20px;
+    height: 120px;
+    background: linear-gradient(90deg, red, white, blue);
+    animation: banner-wave 2s infinite ease-in-out;
 }
+.flag span:nth-child(1) { animation-delay: 0s; }
+.flag span:nth-child(2) { animation-delay: 0.1s; }
+.flag span:nth-child(3) { animation-delay: 0.2s; }
+.flag span:nth-child(4) { animation-delay: 0.3s; }
+.flag span:nth-child(5) { animation-delay: 0.4s; }
+.flag span:nth-child(6) { animation-delay: 0.5s; }
+.flag span:nth-child(7) { animation-delay: 0.6s; }
+.flag span:nth-child(8) { animation-delay: 0.7s; }
+.flag span:nth-child(9) { animation-delay: 0.8s; }
+.flag span:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes line-rotate {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(0); }
+    100% { transform: rotate(-10deg); }
+}
+
+@keyframes banner-wave {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+/* Banner END */

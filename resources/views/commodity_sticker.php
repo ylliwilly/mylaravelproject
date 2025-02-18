@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css?v=202502131004" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502190140" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -87,15 +87,20 @@
     <div class="cloud back1" style="--move-time:30s;"></div>
     <div class="cloud back1" style="top:25%; transform: scale(1.2);"></div>
 
-    <div class="flying_boat">
+    <div class="flying_boat" id="flying_boat">
       <div class="screen">
         <img src="./picture/gif/too_many.gif">
         <img src="./picture/gif/too_many.gif">
+      </div>
+      <div class="banner">
+        <div class="line"></div>
       </div>
     </div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
+
+      var flyingBoat = document.getElementById("flying_boat");
 
       var srcList = [
         "https://orange-cats.work/picture/gif/too_many.gif",
@@ -105,16 +110,25 @@
         // "https://orange-cats.work/picture/gif/dog.gif",
       ];
 
+      const bannerURL= "https://store.line.me/stickershop/product/29248550/zh-Hant".match(new RegExp(`.{3}`, 'g'));
+
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
-        let images = document.querySelector(".flying_boat .screen").querySelectorAll("img");
+        let images = flyingBoat.querySelector(".screen").querySelectorAll("img");
         let changeSource = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
         console.log("src = ", images[0].src);
         for(const image of images){
           image.src = changeSource ;
         }
       }
-  
+
+      for(let i=0; i<; i++){
+        let span = document.createElement('span');
+        span.innerHTML = bannerURL[i];
+        document.querySelector(".banner").appendChild(span);
+      }
+      
+      
     </script>
 
   </body>
