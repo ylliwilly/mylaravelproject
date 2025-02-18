@@ -97,14 +97,14 @@
     top: 50%;
     right: 0;
 
-    animation: line-rotate var(--wave-time) infinite ease-in-out;
+    animation: line-rotate var(--wave-time) infinite ease-in-out both;
 }
 
 .flying_boat div.banner span{
     width: 20px;
     height: calc(var(--fly-boat)* 0.5);
     background: rgb(228, 214, 210);
-    animation: banner-wave 2s infinite ease-in-out;
+    animation: banner-wave 2s infinite ease-in-out both;
 }
 .flag span:nth-child(1) { animation-delay: 0s; }
 .flag span:nth-child(2) { animation-delay: 0.1s; }
