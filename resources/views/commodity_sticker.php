@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css?v=202502190152" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502190157" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -92,8 +92,9 @@
         <img src="./picture/gif/too_many.gif">
         <img src="./picture/gif/too_many.gif">
       </div>
-      <div class="banner">
+      <div class="advertising_banner">
         <div class="line"></div>
+        <div class="banner"></div>
       </div>
     </div>
     
