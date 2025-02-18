@@ -122,7 +122,7 @@
         }
       }
 
-      for(let i=0; i<; i++){
+      for(let i=0; i<bannerURL.length; i++){
         let span = document.createElement('span');
         span.innerHTML = bannerURL[i];
         document.querySelector(".banner").appendChild(span);

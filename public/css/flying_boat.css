@@ -93,6 +93,7 @@
     transform-origin: center right;
 
     position: absolute;
+    top: calc(var(--fly-boat)*0.215);
     right: 0;
 
     animation: line-rotate var(--wave-time) infinite ease-in-out;
@@ -101,7 +102,7 @@
 .flying_boat div.banner span{
     width: 20px;
     height: 120px;
-    background: linear-gradient(90deg, red, white, blue);
+    background: rgb(228, 214, 210);
     animation: banner-wave 2s infinite ease-in-out;
 }
 .flag span:nth-child(1) { animation-delay: 0s; }
