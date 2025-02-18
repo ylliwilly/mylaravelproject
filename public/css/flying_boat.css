@@ -80,14 +80,14 @@
 /* Screen END */
 
 /* Banner Start */
-.flying_boat div.banner{
+.flying_boat div.advertising_banner{
     position: absolute;
     top: calc(var(--fly-boat)* 0.26);
     right: var(--fly-boat);
 
     --line-width: calc(var(--fly-boat)*0.2);;
 }
-.flying_boat div.banner div.line{
+.flying_boat div.advertising_banner div.line{
     width: var(--line-width);
     height: 0.5vh;
 
