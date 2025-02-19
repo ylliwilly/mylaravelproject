@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css?v=202502190104" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502190234" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -125,7 +125,7 @@
 
       for(let i=0; i<bannerURL.length; i++){
         let span = document.createElement('span');
-        
+
         span.style.animationDelay = `${i * 0.1}s`;
         span.innerHTML = bannerURL[i];
         document.querySelector(".banner").appendChild(span);

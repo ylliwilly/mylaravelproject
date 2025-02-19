@@ -88,7 +88,7 @@
     min-width: max-content;
     min-height: max-content;
 
-    --line-width: calc(var(--fly-boat)*0.2);;
+    --line-width: calc(var(--fly-boat)*0.2);
 }
 .flying_boat div.advertising_banner div.line{
     width: var(--line-width);
@@ -108,21 +108,23 @@
 .flying_boat div.advertising_banner div.banner{
     position: absolute;
     right: var(--line-width);
+    top: calc(0vw - var(--fly-boat)* 0.01);
 
+    animation: banner-wave var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
 .flying_boat div.advertising_banner div.banner span{
+    font-size: calc(var(--fly-boat)* 0.02);
+    padding: calc(var(--fly-boat)* 0.1) 0;
+    color: #000000;
+
     position: relative;
     /* width: 20px;
     height: calc(var(--fly-boat)* 0.5); */
     background: rgb(228, 214, 210);
     animation: banner-wave 2s alternate-reverse infinite ease-in-out both;
 
-    --span-index: attr(data-index number);
-}
-/* .flying_boat div.advertising_banner div.banner span:nth-child(1) { animation-delay: 0s; } */
-.flying_boat div.advertising_banner div.banner span:nth-child(n) {
-    animation-delay: calc((var(--span-index) ) * 0.1s);
+    
 }
 
 @keyframes line-rotate {
@@ -132,6 +134,12 @@
 }
 
 @keyframes banner-wave {
+    0% { transform: translateY(10px); }
+    50% { transform: translateY(0px); }
+    100% { transform: translateY(10px); }
+}
+
+@keyframes span-wave {
     0% { top :0px; }
     50% { top :-10px; }
     100% { top :0px; }
