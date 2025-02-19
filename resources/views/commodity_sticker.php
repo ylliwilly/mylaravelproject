@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css?v=202502190248" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502190249" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -111,7 +111,8 @@
         // "https://orange-cats.work/picture/gif/dog.gif",
       ];
 
-      const bannerURL= "https://store.line.me/stickershop/product/29248550/zh-Hant".match(new RegExp(`.{3}`, 'g'));
+      const bannerURL ="https://store.line.me/stickershop/product/29248550/zh-Hant"
+      const urlArray= bannerURL.match(new RegExp(`.{3}`, 'g'));
 
       var timeoutID = setInterval(changeScreen, 11000);
       function changeScreen() {
@@ -123,12 +124,13 @@
         }
       }
 
-      for(let i=0; i<bannerURL.length; i++){
-        let span = document.createElement('span');
+      for(let i=0; i<urlArray.length; i++){
+        let a = document.createElement('a');
 
-        span.style.animationDelay = `${i * 0.1}s`;
-        span.innerHTML = bannerURL[i];
-        document.querySelector(".banner").appendChild(span);
+        a.href = bannerURL;
+        a.style.animationDelay = `${i * 0.1}s`;
+        a.innerHTML = urlArray[i];
+        document.querySelector(".banner").appendChild(a);
       }
       
       

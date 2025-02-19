@@ -117,7 +117,7 @@
     animation: banner-wave var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
-.flying_boat div.advertising_banner div.banner span{
+.flying_boat div.advertising_banner div.banner a{
     font-size: calc(var(--fly-boat)* 0.02);
     padding: calc(var(--fly-boat)* 0.1) 0;
     color: #000000;
@@ -126,7 +126,7 @@
     /* width: 20px;
     height: calc(var(--fly-boat)* 0.5); */
     background: rgb(228, 214, 210);
-    animation: span-wave 2s alternate-reverse infinite ease-in-out both;
+    animation: a-wave 2s alternate-reverse infinite ease-in-out both;
 
     
 }
@@ -143,7 +143,7 @@
     100% { transform: translateY(1.5vw) rotate(-5deg); }
 }
 
-@keyframes span-wave {
+@keyframes a-wave {
     0% { top :0px; }
     50% { top :-10px; }
     100% { top :0px; }
