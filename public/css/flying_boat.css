@@ -120,7 +120,7 @@
 
     --span-index: attr(data-index number);
 }
-.flying_boat div.advertising_banner div.banner span:nth-child(1) { animation-delay: 0s; }
+/* .flying_boat div.advertising_banner div.banner span:nth-child(1) { animation-delay: 0s; } */
 .flying_boat div.advertising_banner div.banner span:nth-child(n) {
     animation-delay: calc((var(--span-index) ) * 0.1s);
 }

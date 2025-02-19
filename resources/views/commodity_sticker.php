@@ -125,7 +125,8 @@
 
       for(let i=0; i<bannerURL.length; i++){
         let span = document.createElement('span');
-        span.dataset.index = i;
+        
+        span.style.animationDelay = `${i * 0.1}s`;
         span.innerHTML = bannerURL[i];
         document.querySelector(".banner").appendChild(span);
       }
