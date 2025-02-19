@@ -1,12 +1,15 @@
-.flying_boat {
+:root{
     --fly-boat: 45vw;
+}
+
+.flying_boat {
     width: var(--fly-boat);
     /* height: 25vw; */
     aspect-ratio: 89/58;
 
     position: absolute;
     top: 12vh;
-    left: calc(-var(--fly-boat));
+    left: calc(0vw - var(--fly-boat));
     z-index: 1;
 
     /* background-color: #ff9000; */
@@ -135,9 +138,9 @@
 }
 
 @keyframes banner-wave {
-    0% { transform: translateY(-20px) rotate(5deg); }
+    0% { transform: translateY(calc(0vw - var(--fly-boat)* 0.01)) rotate(5deg); }
     50% { transform: translateY(0px) rotate(0) }
-    100% { transform: translateY(20px) rotate(-5deg); }
+    100% { transform: translateY(calc(var(--fly-boat)* 0.01)) rotate(-5deg); }
 }
 
 @keyframes span-wave {
