@@ -135,8 +135,8 @@
 }
 
 @keyframes banner-wave {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% { top :0px; }
+    50% { top :-10px; }
+    100% { top :0px; }
 }
 /* Banner END */
