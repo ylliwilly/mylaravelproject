@@ -117,17 +117,13 @@
     height: calc(var(--fly-boat)* 0.5); */
     background: rgb(228, 214, 210);
     animation: banner-wave 2s alternate-reverse infinite ease-in-out both;
+
+    --span-index: attr(data-index number);
 }
 .flying_boat div.advertising_banner div.banner span:nth-child(1) { animation-delay: 0s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(2) { animation-delay: 0.1s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(3) { animation-delay: 0.2s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(4) { animation-delay: 0.3s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(5) { animation-delay: 0.4s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(6) { animation-delay: 0.5s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(7) { animation-delay: 0.6s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(8) { animation-delay: 0.7s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(9) { animation-delay: 0.8s; }
-.flying_boat div.advertising_banner div.banner span:nth-child(10) { animation-delay: 0.9s; }
+.flying_boat div.advertising_banner div.banner span:nth-child(n) {
+    animation-delay: calc((var(--span-index) - 1) * 0.1s);
+}
 
 @keyframes line-rotate {
     0% { transform: rotate(10deg); }
