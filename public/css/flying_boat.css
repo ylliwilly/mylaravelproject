@@ -110,6 +110,7 @@
     right: var(--line-width);
     top: calc(0vw - var(--fly-boat)* 0.01);
 
+    transform-origin: center right;
     animation: banner-wave var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
@@ -134,9 +135,9 @@
 }
 
 @keyframes banner-wave {
-    0% { transform: translateY(-20px); }
-    50% { transform: translateY(0px); }
-    100% { transform: translateY(20px); }
+    0% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(0px) rotate(0) }
+    100% { transform: translateY(20px) rotate(-5deg); }
 }
 
 @keyframes span-wave {
