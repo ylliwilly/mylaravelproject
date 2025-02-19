@@ -138,9 +138,9 @@
 }
 
 @keyframes banner-wave {
-    0% { transform: translateY(calc(0vw - var(--fly-boat)* 0.01)) rotate(5deg); }
+    0% { transform: translateY(-1vw) rotate(5deg); }
     50% { transform: translateY(0px) rotate(0) }
-    100% { transform: translateY(calc(var(--fly-boat)* 0.01)) rotate(-5deg); }
+    100% { transform: translateY(1vw) rotate(-5deg); }
 }
 
 @keyframes span-wave {
