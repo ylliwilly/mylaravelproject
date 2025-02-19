@@ -89,7 +89,7 @@
 }
 .flying_boat div.advertising_banner div.line{
     width: var(--line-width);
-    height: 0.5vh;
+    height: 0.2vh;
 
     background-color: rgb(52, 22, 3);
 
