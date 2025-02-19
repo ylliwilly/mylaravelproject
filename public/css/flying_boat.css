@@ -85,6 +85,9 @@
     top: calc(var(--fly-boat)* 0.26);
     right: var(--fly-boat);
 
+    min-width: max-content;
+    min-height: max-content;
+
     --line-width: calc(var(--fly-boat)*0.2);;
 }
 .flying_boat div.advertising_banner div.line{
@@ -105,6 +108,7 @@
 .flying_boat div.advertising_banner div.banner{
     position: absolute;
     right: var(--line-width);
+
 }
 
 .flying_boat div.advertising_banner div.banner span{
