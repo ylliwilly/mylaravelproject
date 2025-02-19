@@ -138,9 +138,9 @@
 }
 
 @keyframes banner-wave {
-    0% { transform: translateY(-1vw) rotate(5deg); }
+    0% { transform: translateY(-2vw) rotate(5deg); }
     50% { transform: translateY(0px) rotate(0) }
-    100% { transform: translateY(1vw) rotate(-5deg); }
+    100% { transform: translateY(2vw) rotate(-5deg); }
 }
 
 @keyframes span-wave {
