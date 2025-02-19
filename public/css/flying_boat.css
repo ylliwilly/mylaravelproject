@@ -122,7 +122,7 @@
     /* width: 20px;
     height: calc(var(--fly-boat)* 0.5); */
     background: rgb(228, 214, 210);
-    animation: banner-wave 2s alternate-reverse infinite ease-in-out both;
+    animation: span-wave 2s alternate-reverse infinite ease-in-out both;
 
     
 }
