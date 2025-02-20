@@ -148,7 +148,7 @@
 
       window.onload = (event) => {
         
-        document.body.scrollLeft = document.body.scrollWidth/2;
+        document.body.scrollLeft = bodyWidth/2;
         console.log(document.body.scrollLeft);
       }
       
