@@ -38,7 +38,7 @@
         padding: 0;
         margin: 0;
 
-        overflow: hidden;
+        /* overflow: hidden; */
 
         /* transition: all 0.4s ease-in;
         -webkit-transition: all 0.4s ease-in; */
