@@ -48,6 +48,23 @@
         animation-direction: reverse !important;
       }
 
+      button.scroll{
+        width: 5vw;
+        height: 5vw;
+        
+        position: fixed;
+        bottom: 5vh;
+      }
+      button.left{
+        left:5vw;
+      }
+      button.down{
+        left:45vw;
+      }
+      button.right{
+        right:5vw;
+      }
+
     </style>
 
     <script>
@@ -87,6 +104,10 @@
     <div class="cloud back1" style="--move-time:30s;"></div>
     <div class="cloud back1" style="top:25%; transform: scale(1.2);"></div>
 
+    <button class="scroll left"></button>
+    <button class="scroll right"></button>
+    <button class="scroll down"></button>
+
     <div class="advertising_flying_boat">
       <div class="banner"></div>
       <div class="line"></div>
@@ -100,8 +121,21 @@
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
+      const bodyWidth = document.body.scrollWidth;
+      const bodyHeifht = document.body.scrollHeight;
+      
+      const leftButton = document.querySelector(".scroll left");
+      const rightButton = document.querySelector(".scroll right");
+      const downButton = document.querySelector(".scroll down");
 
-      document.body.scrollLeft = document.body.scrollWidth/2;
+      leftButton.addEventListener("click", ()=>{
+        document.body.scrollLeft = bodyWidth*0.18;
+      })
+      leftButton.addEventListener("click", ()=>{
+        document.body.scrollLeft = bodyWidth*0.5;
+      })
+
+      document.body.scrollLeft = bodyWidth/2;
 
       var flyingBoat = document.getElementById("flying_boat");
 
