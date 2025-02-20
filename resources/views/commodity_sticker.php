@@ -149,7 +149,7 @@
       window.onload = (event) => {
         setTimeout(function () {
           document.body.scrollLeft = bodyWidth/2;
-        }, 100);
+        }, 10);
       }
       
       var srcList = [
