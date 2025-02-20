@@ -149,7 +149,7 @@
       window.onload = (event) => {
         
         document.body.scrollLeft = document.body.scrollWidth/2;
-        alert(document.body.scrollLeft);
+        console.log(document.body.scrollLeft);
       }
       
       var srcList = [
