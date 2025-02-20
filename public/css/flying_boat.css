@@ -32,10 +32,10 @@
 /* 船飛入 */
 @keyframes fly-in {
     0% {
-        right: -100vw;
+        right: 100vw;
     }
     100% {
-        right: -15vw;
+        right: 15vw;
     }
 }
 
