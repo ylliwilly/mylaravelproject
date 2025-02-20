@@ -1,6 +1,6 @@
 :root{
     --fly-boat-width: 45vw;
-    --fly-boat-height: calc(var(--fly-boat-width)*89/58)
+    --fly-boat-height: calc(var(--fly-boat-width)*89/58);
     --line-width: calc(var(--fly-boat-width)*0.2);
 }
 
