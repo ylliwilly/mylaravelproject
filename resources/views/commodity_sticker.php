@@ -129,13 +129,12 @@
       const downButton = document.querySelector(".scroll.down");
 
       leftButton.addEventListener("click", ()=>{
-          document.body.scrollLeft = bodyWidth*0.18;
-        })
+        document.body.scrollLeft = bodyWidth*0.1;
+      })
       rightButton.addEventListener("click", ()=>{
         document.body.scrollLeft = bodyWidth*0.5;
       })
 
-      document.body.scrollLeft = bodyWidth/2;
       document.addEventListener("DOMContentLoaded", function(){
         document.body.scrollLeft = document.body.scrollWidth/2;
       });
