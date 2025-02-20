@@ -13,7 +13,7 @@
 
     <link href="css/hamburger_menu.css?v-new" type="text/css" rel="stylesheet"><!-- 漢堡選單 -->
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
-    <link href="css/flying_boat.css?v=202502201032" type="text/css" rel="stylesheet"><!--飛行艇-->
+    <link href="css/flying_boat.css?v=202502201046" type="text/css" rel="stylesheet"><!--飛行艇-->
     
     <title>橘貓橘貓窩</title>
 
@@ -32,13 +32,13 @@
         background-attachment: fixed;
         
         height: 100vh;
-        width:100vw;
+        width:200vw;
 
         /*覆蓋瀏覽器設定*/
         padding: 0;
         margin: 0;
 
-        /* overflow: hidden; */
+        overflow: hidden;
 
         transition: all 0.4s ease-in;
         -webkit-transition: all 0.4s ease-in;
@@ -100,6 +100,8 @@
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
+
+      document.body.scrollLeft = document.body.scrollWidth/2;
 
       var flyingBoat = document.getElementById("flying_boat");
 
