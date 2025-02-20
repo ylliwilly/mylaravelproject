@@ -40,8 +40,8 @@
 
         overflow: hidden;
 
-        transition: all 0.4s ease-in;
-        -webkit-transition: all 0.4s ease-in;
+        /* transition: all 0.4s ease-in;
+        -webkit-transition: all 0.4s ease-in; */
       }
 
       .cloud{
@@ -129,10 +129,18 @@
       const downButton = document.querySelector(".scroll.down");
 
       leftButton.addEventListener("click", ()=>{
-        document.body.scrollLeft = bodyWidth*0.1;
+        document.body.scrollTo({
+          top: 0,
+          left: bodyWidth*0.1,
+          behavior: 'smooth'
+        });
       })
       rightButton.addEventListener("click", ()=>{
-        document.body.scrollLeft = bodyWidth*0.5;
+        document.body.scrollTo({
+          top: 0,
+          left: bodyWidth*0.5,
+          behavior: 'smooth'
+        });
       })
 
       document.addEventListener("DOMContentLoaded", function(){
