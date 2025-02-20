@@ -1,5 +1,6 @@
 :root{
     --fly-boat: 45vw;
+    --line-width: calc(var(--fly-boat)*0.2);
 }
 
 /* 整個飛船+線+廣告布條 */
@@ -90,17 +91,7 @@
 /* Screen END */
 
 /* Banner Start */
-.advertising_flying_boat div.advertising_banner{
-    position: absolute;
-    top: calc(var(--fly-boat)* 0.26);
-    right: var(--fly-boat);
-
-    min-width: max-content;
-    min-height: max-content;
-
-    --line-width: calc(var(--fly-boat)*0.2);
-}
-.advertising_flying_boat div.advertising_banner div.line{
+.advertising_flying_boat div.line{
     width: var(--line-width);
     height: 0.2vh;
 
@@ -109,22 +100,22 @@
     transform-origin: center right;
 
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: calc(var(--fly-boat)* 0.26);
+    right: var(--fly-boat);
 
     animation: line-rotate var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
-.advertising_flying_boat div.advertising_banner div.banner{
+.advertising_flying_boat div.banner{
     position: absolute;
-    right: var(--line-width);
-    top: calc(0vw - var(--fly-boat)* 0.01);
+    right: calc(var(--fly-boat) + var(--line-width));
+    top: calc(var(--fly-boat)* 0.26);
 
     transform-origin: center right;
     animation: banner-wave var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
-.advertising_flying_boat div.advertising_banner div.banner a{
+.advertising_flying_boat div.banner a{
     font-size: calc(var(--fly-boat)* 0.02);
     padding: calc(var(--fly-boat)* 0.1) 0;
     color: #000000;
