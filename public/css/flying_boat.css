@@ -68,7 +68,7 @@
     height: calc(var(--fly-boat-width)* 0.37);
     
     position: relative;
-    top: calc(var(--fly-boat-width)*0.115);
+    top: calc(var(--fly-boat-width)*0.55);
     left: calc(var(--fly-boat-width)*0.333);
 }
 
