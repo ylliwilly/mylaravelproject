@@ -147,9 +147,9 @@
       });
 
       window.onload = (event) => {
-        
-        document.body.scrollLeft = bodyWidth/2;
-        console.log(document.body.scrollLeft);
+        setTimeout(function () {
+          document.body.scrollLeft = bodyWidth/2;
+        }, 1000);
       }
       
       var srcList = [
