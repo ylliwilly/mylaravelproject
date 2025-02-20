@@ -146,7 +146,9 @@
         });
       });
 
-      document.body.scrollLeft = bodyWidth/2;
+      window.onload = () => {
+        document.body.scrollLeft = bodyWidth/2;
+      }
       
       var srcList = [
         "https://orange-cats.work/picture/gif/too_many.gif",
@@ -177,7 +179,6 @@
         a.innerHTML = urlArray[i];
         document.querySelector(".banner").appendChild(a);
       }
-      
       
     </script>
 
