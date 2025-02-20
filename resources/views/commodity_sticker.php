@@ -135,7 +135,7 @@
         document.body.scrollLeft = bodyWidth*0.5;
       })
 
-      document.body.scrollLeft = bodyWidth/2;
+      document.body.scrollLeft = document.body.scrollWidth/2;
 
       var flyingBoat = document.getElementById("flying_boat");
 
