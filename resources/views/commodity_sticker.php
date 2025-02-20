@@ -147,9 +147,11 @@
       document.body.scrollLeft = document.body.scrollWidth/2;
       console.log("1");
       console.log(document.body.scrollWidth/2);
+      console.log(document.body.scrollLeft);
       document.addEventListener("DOMContentLoaded", function(){
         console.log("2");
         console.log(document.body.scrollWidth/2);
+        console.log(document.body.scrollLeft);
         document.body.scrollLeft = document.body.scrollWidth/2;
       });
       var flyingBoat = document.getElementById("flying_boat");
