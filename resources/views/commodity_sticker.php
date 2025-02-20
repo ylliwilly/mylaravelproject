@@ -123,10 +123,10 @@
     <script type="text/javascript">
       const bodyWidth = document.body.scrollWidth;
       const bodyHeifht = document.body.scrollHeight;
-      
-      const leftButton = document.querySelector(".scroll left");
-      const rightButton = document.querySelector(".scroll right");
-      const downButton = document.querySelector(".scroll down");
+
+      const leftButton = document.querySelector(".scroll.left");
+      const rightButton = document.querySelector(".scroll.right");
+      const downButton = document.querySelector(".scroll.down");
 
       leftButton.addEventListener("click", ()=>{
         document.body.scrollLeft = bodyWidth*0.18;
