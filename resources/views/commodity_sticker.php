@@ -128,14 +128,16 @@
       const rightButton = document.querySelector(".scroll.right");
       const downButton = document.querySelector(".scroll.down");
 
-      document.addEventListener("DOMContentLoaded", function(){
-        document.body.scrollLeft = bodyWidth/2;
-        leftButton.addEventListener("click", ()=>{
+      leftButton.addEventListener("click", ()=>{
           document.body.scrollLeft = bodyWidth*0.18;
         })
-        leftButton.addEventListener("click", ()=>{
-          document.body.scrollLeft = bodyWidth*0.5;
-        })
+      rightButton.addEventListener("click", ()=>{
+        document.body.scrollLeft = bodyWidth*0.5;
+      })
+
+      document.body.scrollLeft = bodyWidth/2;
+      document.addEventListener("DOMContentLoaded", function(){
+        document.body.scrollLeft = document.body.scrollWidth/2;
       });
       var flyingBoat = document.getElementById("flying_boat");
 
