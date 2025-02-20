@@ -128,6 +128,8 @@
       const rightButton = document.querySelector(".scroll.right");
       const downButton = document.querySelector(".scroll.down");
 
+      const flyingBoat = document.getElementById("flying_boat");
+
       leftButton.addEventListener("click", ()=>{
         document.body.scrollTo({
           top: 0,
@@ -144,11 +146,8 @@
         });
       });
 
-      document.addEventListener("DOMContentLoaded", function(){
-        document.body.scrollLeft = bodyWidth/2;
-      });
-      var flyingBoat = document.getElementById("flying_boat");
-
+      document.body.scrollLeft = bodyWidth/2;
+      
       var srcList = [
         "https://orange-cats.work/picture/gif/too_many.gif",
         "https://orange-cats.work/picture/gif/positive.gif",
