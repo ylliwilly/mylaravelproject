@@ -2,21 +2,15 @@
     --fly-boat: 45vw;
 }
 
-.flying_boat {
-    width: var(--fly-boat);
-    /* height: 25vw; */
-    aspect-ratio: 89/58;
+/* 整個飛船+線+廣告布條 */
+.advertising_flying_boat{
+    width: fit-content;
+    height: fit-content;
 
     position: absolute;
     top: 12vh;
     left: calc(0vw - var(--fly-boat));
     z-index: 1;
-
-    /* background-color: #ff9000; */
-    background-image: url("../picture/fly_boat.svg");
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
     
     transform: translateY(0);
 
@@ -53,8 +47,21 @@
     }
 }
 
+/* 飛船 */
+.advertising_flying_boat .flying_boat{
+    width: var(--fly-boat);
+    /* height: 25vw; */
+    aspect-ratio: 89/58;
+
+    /* background-color: #ff9000; */
+    background-image: url("../picture/fly_boat.svg");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 /* Screen Start */
-.flying_boat div.screen{
+.advertising_flying_boat .flying_boat div.screen{
     width: calc(var(--fly-boat)*0.42);
     height: calc(var(--fly-boat)* 0.37);
     
@@ -63,7 +70,7 @@
     left: calc(var(--fly-boat)*0.333);
 }
 
-.flying_boat div.screen img{
+.advertising_flying_boat .flying_boat div.screen img{
     width: 100%;
     height: 100%;
 
@@ -72,18 +79,18 @@
     object-fit: cover;
     object-position: center;
 }
-.flying_boat div.screen img:first-child{
+.advertising_flying_boat .flying_boat div.screen img:first-child{
     transform: perspective(60vw) rotateX(20deg);
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
 }
-.flying_boat div.screen img:last-child{
+.advertising_flying_boat .flying_boat div.screen img:last-child{
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
     transform: perspective(60vw) rotateX(-20deg);
 }
 /* Screen END */
 
 /* Banner Start */
-.flying_boat div.advertising_banner{
+.advertising_flying_boat div.advertising_banner{
     position: absolute;
     top: calc(var(--fly-boat)* 0.26);
     right: var(--fly-boat);
@@ -93,7 +100,7 @@
 
     --line-width: calc(var(--fly-boat)*0.2);
 }
-.flying_boat div.advertising_banner div.line{
+.advertising_flying_boat div.advertising_banner div.line{
     width: var(--line-width);
     height: 0.2vh;
 
@@ -108,7 +115,7 @@
     animation: line-rotate var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
-.flying_boat div.advertising_banner div.banner{
+.advertising_flying_boat div.advertising_banner div.banner{
     position: absolute;
     right: var(--line-width);
     top: calc(0vw - var(--fly-boat)* 0.01);
@@ -117,7 +124,7 @@
     animation: banner-wave var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
 
-.flying_boat div.advertising_banner div.banner a{
+.advertising_flying_boat div.advertising_banner div.banner a{
     font-size: calc(var(--fly-boat)* 0.02);
     padding: calc(var(--fly-boat)* 0.1) 0;
     color: #000000;
@@ -127,8 +134,7 @@
     height: calc(var(--fly-boat)* 0.5); */
     background: rgb(228, 214, 210);
     animation: a-wave 2s alternate-reverse infinite ease-in-out both;
-
-    
+  
 }
 
 @keyframes line-rotate {
@@ -149,3 +155,4 @@
     100% { top :0px; }
 }
 /* Banner END */
+
