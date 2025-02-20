@@ -1,6 +1,6 @@
 :root{
     --fly-boat-width: 45vw;
-    --fly-boat-height: calc(var(--fly-boat-width)*89/58);
+    --fly-boat-height: calc(var(--fly-boat-width)*58/89);
     --line-width: calc(var(--fly-boat-width)*0.2);
 }
 
@@ -91,7 +91,7 @@
 }
 /* Screen END */
 
-/* Banner Start */
+/* Line Start */
 .advertising_flying_boat div.line{
     width: var(--line-width);
     height: 0.2vh;
@@ -101,15 +101,17 @@
     transform-origin: center right;
 
     position: relative;
-    top: calc(0vw - var(--fly-boat-height));
+    top: calc(0vw - var(--fly-boat-height)*0.5);
     right: var(--line-width);
 
     animation: line-rotate var(--wave-time) alternate-reverse infinite ease-in-out both;
 }
+/* Line End */
 
+/* Banner Start */
 .advertising_flying_boat div.banner{
     position: relative;
-    top: calc(0vw - var(--fly-boat-height));
+    top: calc(0vw - var(--fly-boat-height)*0.5);
     right: calc(var(--fly-boat-width) + var(--line-width));
 
     transform-origin: center right;
