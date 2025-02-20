@@ -134,14 +134,16 @@
           left: bodyWidth*0.1,
           behavior: 'smooth'
         });
-      })
+      });
+
       rightButton.addEventListener("click", ()=>{
         document.body.scrollTo({
           top: 0,
           left: bodyWidth*0.5,
           behavior: 'smooth'
         });
-      })
+      });
+
       document.body.scrollLeft = bodyWidth/2;
       document.addEventListener("DOMContentLoaded", function(){
         document.body.scrollLeft = document.body.scrollWidth/2;
@@ -163,7 +165,7 @@
       function changeScreen() {
         let images = flyingBoat.querySelector(".screen").querySelectorAll("img");
         let changeSource = srcList[(srcList.indexOf(images[0].src)+1)%(srcList.length)];
-        console.log("src = ", images[0].src);
+        // console.log("src = ", images[0].src);
         for(const image of images){
           image.src = changeSource ;
         }
