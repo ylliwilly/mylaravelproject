@@ -16,7 +16,7 @@
 
     position: relative;
     top: 12vh;
-    left: calc(0vw - var(--fly-boat-width));
+    /* left: calc(0vw - var(--fly-boat-width)); */
     z-index: 1;
     
     transform: translateY(0);
@@ -32,10 +32,10 @@
 /* 船飛入 */
 @keyframes fly-in {
     0% {
-        left: -45vw;
+        right: -100vw;
     }
     100% {
-        left: 27vw;
+        right: -15vw;
     }
 }
 
@@ -73,7 +73,7 @@
     height: calc(var(--fly-boat-width)* 0.37);
     
     position: absolute;
-    top: calc(var(--fly-boat-width)*0.18);
+    top: calc(var(--fly-boat-height)*0.18);
     left: calc(var(--fly-boat-width)*0.333);
 }
 
