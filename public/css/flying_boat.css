@@ -59,7 +59,7 @@
     width: var(--fly-boat-width);
     height: var(--fly-boat-height);
     /* aspect-ratio: 89/58; */
-
+    position: relative;
     /* background-color: #ff9000; */
     background-image: url("../picture/fly_boat.svg");
     background-position: center center;
@@ -72,8 +72,8 @@
     width: calc(var(--fly-boat-width)*0.42);
     height: calc(var(--fly-boat-width)* 0.37);
     
-    position: relative;
-    top: calc(var(--fly-boat-width)*0.55);
+    position: absolute;
+    top: calc(var(--fly-boat-width)*0.18);
     left: calc(var(--fly-boat-width)*0.333);
 }
 
