@@ -147,7 +147,7 @@
       });
 
       window.onload = () => {
-        document.body.scrollLeft = bodyWidth/2;
+        document.body.scrollLeft = document.body.scrollWidth/2;
       }
       
       var srcList = [
