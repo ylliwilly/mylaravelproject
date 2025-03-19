@@ -28,11 +28,11 @@
 
         switch(type) {
             case 'fragment':
-            shaderScript = document.querySelector('#shader-fs').textContent;
+            shaderScript = document.getElementById('shader-fs').textContent;
             shader = gl.createShader(gl.FRAGMENT_SHADER);
             break;
             case 'vertex':
-            shaderScript = document.querySelector('#shader-vs').textContent;
+            shaderScript = document.getElementById('shader-vs').textContent;
             shader = gl.createShader(gl.VERTEX_SHADER);
             break;
         }
