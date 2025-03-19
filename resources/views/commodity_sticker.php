@@ -117,6 +117,18 @@
           <img src="./picture/gif/too_many.gif">
         </div>
       </div>
+      <div class="line"></div>
+      <div class="strip"></div>
+    </div>
+
+    <canvas width="600" height="600" id="canvas">
+
+    <div class="main_building">
+
+    </div>
+
+    <div class="buildings">
+
     </div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
@@ -182,6 +194,28 @@
         document.querySelector(".banner").appendChild(a);
       }
       
+    </script>
+
+    <script src="js/my_three.js" type="text/javascript"></script>
+    <!-- 片段著色器（Fragment Shader） -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+      // shader program
+      // gl_FragColor 是個 fragment shader 的全域變數
+      void main(void) {
+        gl_FragColor = vec4(0.0,0.0,0.0,1.0);
+      }
+    </script>
+    
+    <!-- 頂點著色器（Vertex Shader） -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+      // 我們在這裡撰寫 GSGL
+      // vec4 代表一個向量，接收四個參數(x,y,z,w)
+      // 0,0,0 在 3d 座標中代表中心
+      
+      void main(void) {
+        gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
+        gl_PointSize = 10.0;
+      }
     </script>
 
   </body>
