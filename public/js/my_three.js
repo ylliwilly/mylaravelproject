@@ -1,5 +1,5 @@
     function initGL() {
-        var canvas = document.querySelector('#canvas');  
+        var canvas = document.getElementById('main_building');  
         var gl = canvas.getContext('webgl');
         var width = window.innerWidth;
         var height = window.innerHeight;
