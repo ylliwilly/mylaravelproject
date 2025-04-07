@@ -196,13 +196,17 @@
       
     </script>
 
-    <script src="js/my_three.js" type="text/javascript"></script>
+    <script src="js/WebGL.js" type="text/javascript"></script>
     <!-- 片段著色器（Fragment Shader） -->
     <script id="shader-fs" type="x-shader/x-fragment">
       // shader program
       // gl_FragColor 是個 fragment shader 的全域變數
+
+      precision mediump float;
+      uniform vec4 color; //uniform 一旦給予值之後就不會再變化
+
       void main(void) {
-        gl_FragColor = vec4(0.0,0.0,0.0,1.0);
+        gl_FragColor = color;
       }
     </script>
     
@@ -211,10 +215,14 @@
       // 我們在這裡撰寫 GSGL
       // vec4 代表一個向量，接收四個參數(x,y,z,w)
       // 0,0,0 在 3d 座標中代表中心
+
+      //attribute 這個型別只能夠用在 vertex shader 中，是先取用 buffer 中的資料在傳給 attribute
+      attribute vec4 position;
+      attribute float size;
       
       void main(void) {
-        gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-        gl_PointSize = 10.0;
+        gl_Position = position;
+        gl_PointSize = size;
       }
     </script>
 
