@@ -53,7 +53,7 @@
               <summary style="color:white;">Works</summary>
               <nav class="menu">
                 <a href="./collections">Alikoi(一止魚)</a>
-                <a href="#">Tanuki(小橘貓)</a>
+                {{-- <a href="#">Tanuki(小橘貓)</a> --}}
               </nav>
             </details>
           <!-- </a> -->

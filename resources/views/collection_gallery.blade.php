@@ -425,7 +425,7 @@ img {
     <!-- 側邊欄 END -->
   <div class="button-group filters-button-group">
     <button class="button is-checked" data-filter="*">all</button>
-    <button class="button" data-filter=".tanuki">小橘貓(Tanuki)</button>
+    {{-- <button class="button" data-filter=".tanuki">小橘貓(Tanuki)</button> --}}
     <button class="button" data-filter=".alikoi">大橘貓(Alikoi/一止魚)</button>
     <button class="button" data-filter=".draw">draw</button>
     <button class="button" data-filter=".handicraft">handicraft</button>
