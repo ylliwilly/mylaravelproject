@@ -416,7 +416,7 @@ img {
       <!-- MENU STRAT -->
       <div class="menu">
         <button class="page" onclick="window.location.assign('./home')">Home</button>
-        <button class="page" onclick="window.location.assign('./about_us')">About</button>
+        <button class="page" onclick="window.location.assign('./about_me')">About</button>
         <button class="page" onclick="window.location.assign('./sales')">Sales</button>
         <button class="page" onclick="window.location.assign('./comic')">Comic</button>
       </div>

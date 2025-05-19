@@ -26,9 +26,9 @@ class WebController extends Controller
     {
         return view('home');
     }
-    public function jump_About_us(Request $request)
+    public function jump_About_me(Request $request)
     {
-        return view('about_us');
+        return view('about_me');
     }
     public function jump_Collections(Request $request)
     {

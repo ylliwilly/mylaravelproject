@@ -34,7 +34,7 @@ Route::controller(WebController::class)->group(function ()
 {
     Route::get('/', 'jump_Introduction'); //簡介
     Route::get('/home', 'jump_Home'); //主頁
-    Route::get('/about_us', 'jump_About_us'); //關於我們
+    Route::get('/about_me', 'jump_About_me'); //關於我們
     Route::get('/comic', 'jump_Comic'); //漫畫
 
     Route::get('/collections', 'jump_Collections'); //作品集
@@ -83,7 +83,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 // Route::get('/', [WebController::class, 'jump_Introduction']);
 // Route::get('/home', [WebController::class, 'jump_Home']);
-// Route::get('/about_us', [WebController::class, 'jump_About_us']);
+// Route::get('/about_me', [WebController::class, 'jump_About_me']);
 // Route::get('/comic', [WebController::class, 'jump_Comic']);
 
 // Route::get('/collections', [WebController::class, 'jump_Collections']);

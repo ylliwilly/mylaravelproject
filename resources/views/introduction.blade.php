@@ -59,7 +59,7 @@
 
     <header class="header">
       <svg viewBox="45 60 400 320" xmlns="http://www.w3.org/2000/svg">
-        <a href="#About_us">
+        <a href="#About_me">
           <path fill="#fff" d="M 90 210 C 90 180 90 150 90 150 C 150 150 180 150 180 150 C 180 150 300 150 300 150 C 300 150 330 150 390 150 C 390 150 390 180 390 210 C 390 240 390 270 390 270 C 330 270 300 270 300 270 C 300 270 180 270 180 270 C 180 270 150 270 90 270 C 90 270 90 240 90 210" mask="url(#knockout-text)" >
           </path>
           <mask id="knockout-text">
@@ -118,7 +118,7 @@
         
         <div class="nav">
             <ul class="nav__items">
-                <li class="nav__item"><a href="#About_us" class="nav__link">關於我們</a></li>
+                <li class="nav__item"><a href="#About_me" class="nav__link">關於我</a></li>
                 <li class="nav__item"><a href="#Recommend" class="nav__link">推薦商品</a></li>
                 <li class="nav__item"><a href="#Gallery" class="nav__link">習作畫廊</a></li>
                 <li class="nav__item"><a href="#Comic" class="nav__link">漫畫作品</a></li>
@@ -129,7 +129,7 @@
       
     <main>
       <section class="about">
-        <div id="About_us">
+        <div id="About_me">
 
             <div class="artic layout-box">
                 <div class="container version-b">
@@ -154,7 +154,7 @@
                         <p>一止魚（Alikoi）</p>
 
                         <div class="special_button" style="margin-top:20px;">
-                          <button class="exquisite_button" onclick="window.location.href='/about_us'">
+                          <button class="exquisite_button" onclick="window.location.href='/about_me'">
                             關於我
                             <div class="button__horizontal"></div>
                             <div class="button__vertical"></div>

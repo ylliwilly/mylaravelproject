@@ -91,7 +91,7 @@ body {
         </b>
         <b>
           貓
-          <a href="javascript:location.href='./about_us';" title="About Us">
+          <a href="javascript:location.href='./about_me';" title="About Us">
            <svg height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.998 511.998" xml:space="preserve" fill="#000000">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
