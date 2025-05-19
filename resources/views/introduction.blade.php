@@ -118,8 +118,8 @@
         
         <div class="nav">
             <ul class="nav__items">
-                <li class="nav__item"><a href="#About_me" class="nav__link">關於我</a></li>
-                <li class="nav__item"><a href="#Recommend" class="nav__link">推薦商品</a></li>
+                <li class="nav__item"><a href="#About_me" class="nav__link">網頁介紹</a></li>
+                {{-- <li class="nav__item"><a href="#Recommend" class="nav__link">推薦商品</a></li> --}}
                 <li class="nav__item"><a href="#Gallery" class="nav__link">習作畫廊</a></li>
                 <li class="nav__item"><a href="#Comic" class="nav__link">漫畫作品</a></li>
                 
@@ -155,7 +155,7 @@
 
                         <div class="special_button" style="margin-top:20px;">
                           <button class="exquisite_button" onclick="window.location.href='/about_me'">
-                            關於我
+                            網頁介紹
                             <div class="button__horizontal"></div>
                             <div class="button__vertical"></div>
                           </button>

@@ -34,7 +34,7 @@ Route::controller(WebController::class)->group(function ()
 {
     Route::get('/', 'jump_Introduction'); //簡介
     Route::get('/home', 'jump_Home'); //主頁
-    Route::get('/about_me', 'jump_About_me'); //關於我們
+    Route::get('/about_me', 'jump_About_me'); //網頁介紹
     Route::get('/comic', 'jump_Comic'); //漫畫
 
     Route::get('/collections', 'jump_Collections'); //作品集
