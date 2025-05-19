@@ -200,11 +200,12 @@
     <!-- 片段著色器（Fragment Shader） -->
     <script id="shader-fs" type="x-shader/x-fragment">
       // shader program
-      // gl_FragColor 是個 fragment shader 的全域變數
+      // gl_FragColor GLSL 規定用來輸出在畫布上顏色的變數,( red, green, blue, alpha)一樣要介在0～1
 
       precision mediump float;
       uniform vec4 color; //uniform 一旦給予值之後就不會再變化
 
+      //每次 shader 執行時跑 void main()
       void main(void) {
         gl_FragColor = color;
       }
@@ -214,9 +215,11 @@
     <script id="shader-vs" type="x-shader/x-vertex">
       // 我們在這裡撰寫 GSGL
       // vec4 代表一個向量，接收四個參數(x,y,z,w)
+      // GLSL 規定用來輸出在畫布上位置的變數，其型別是 vec4, x, y, z，必須介於 -1 至 +1 才會落在畫布中(clip space)
       // 0,0,0 在 3d 座標中代表中心
 
-      //attribute 這個型別只能夠用在 vertex shader 中，是先取用 buffer 中的資料在傳給 attribute
+      //attribute 這個型別只能夠用在 vertex shader 中，是先取用 buffer 中的資料再傳給 attribute
+      //從 buffer 拿出對應的部份作為 attribute 變數 
       attribute vec4 position;
       attribute float size;
       
