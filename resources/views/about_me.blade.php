@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
 
-  <title>橘貓橘貓窩</title>
+  <title>橘貓窩</title>
 
   <link href="{{ asset('css/sidebar.css') }}" type="text/css" rel="stylesheet">
   <link href="css/lamp.css" type="text/css" rel="stylesheet">

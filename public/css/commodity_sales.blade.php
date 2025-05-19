@@ -20,7 +20,7 @@
     <link href="css/rock.css?v-new" type="text/css" rel="stylesheet"><!-- 石頭 -->
     <link href="css/commodity_card.css?v-new" type="text/css" rel="stylesheet"><!-- 商品卡 -->
 
-    <title>橘貓橘貓窩</title>
+    <title>橘貓窩</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
