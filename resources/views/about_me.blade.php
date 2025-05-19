@@ -147,15 +147,25 @@ body {
             <img src="./picture/big_orange_cat.png" alt="BigOrangeCat">
           </div>
         </div>
-        <div class="card">
+        {{-- <div class="card">
           <div class="card__image">
             <img src="./picture/little_orange_cat.png" alt="LittlOrangeCat">
           </div>
-        </div>
-        <div class="card">
+        </div> --}}
+        {{-- <div class="card">
           <div class="card__content">
             <p><em>橘貓裡，母貓出現的機率是1/3，胖的機率是2/2</em></p>
             <p>— Alikoi</p>
+          </div>
+        </div> --}}
+        <div class="card">
+          <div class="card__image">
+            <img src="./picture/管太多.png" alt="Sticker">
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image">
+            <img src="./picture/管太多.png" alt="Sticker">
           </div>
         </div>
         <div class="card card--horizontal">

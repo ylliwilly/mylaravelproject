@@ -155,7 +155,7 @@
 
                         <div class="special_button" style="margin-top:20px;">
                           <button class="exquisite_button" onclick="window.location.href='/about_me'">
-                            網頁介紹
+                            關於我
                             <div class="button__horizontal"></div>
                             <div class="button__vertical"></div>
                           </button>
