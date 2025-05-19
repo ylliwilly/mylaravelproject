@@ -15,7 +15,7 @@
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
     <link href="css/flying_boat.css?v=202502201046" type="text/css" rel="stylesheet"><!--飛行艇-->
     
-    <title>橘貓橘貓窩</title>
+    <title>橘貓窩</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 

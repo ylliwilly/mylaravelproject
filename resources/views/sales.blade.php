@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
 
-  <title>橘貓橘貓窩</title>
+  <title>橘貓窩</title>
 
   <link href="css/menu.css?v2" type="text/css" rel="stylesheet">
   <link href="css/claw.css?v3" type="text/css" rel="stylesheet">
@@ -190,7 +190,7 @@ body {
         <span></span>
         <div class="content">
           <h2>貼圖</h2>
-          <p>橘貓橘貓窩line貼圖預覽～～</p>
+          <p>橘貓窩line貼圖預覽～～</p>
           <a onclick="ChangePage(this,'commodity_sticker')">進入</a>
           <!-- 'commodity_case' -->
         </div>

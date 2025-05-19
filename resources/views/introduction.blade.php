@@ -10,7 +10,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-    <title>橘貓橘貓窩</title>
+    <title>橘貓窩</title>
 
     <link href="css/header.css?v3" type="text/css" rel="stylesheet"><!--topbar-->
     <link href="css/loader.css" type="text/css" rel="stylesheet"><!--字-->
@@ -73,7 +73,7 @@
     <nav class="sticky navbar">
         <div class="brand  display__logo nav__link">
             <div class="loader logo">
-                <h1>橘貓橘貓窩</h1>
+                <h1>橘貓窩</h1>
             </div>
         </div>
 
@@ -148,14 +148,14 @@
                         </div>
                     </div>
                     <div class="text">
-                        <h2>橘貓橘貓窩</h2>
-                        <p>由 大橘貓 x 小(中)橘貓 組成 的 「藝術工作坊」</p>
-                        <p>我們販售大小橘貓為主題的週邊為主，也提供訂製手工藝（貼紙、3D列印、鉤針），若有需要歡迎聯繫我們呦～～～～！</p>
-                        <p>大橘貓(Alikoi/一止魚)、小橘貓(Tanuki)</p>
+                        <h2>橘貓窩</h2>
+                        <p>一個自架的個人網站，</p>
+                        <p>為個人展示的頁面，歡迎各位的到訪！</p>
+                        <p>一止魚（Alikoi）</p>
 
                         <div class="special_button" style="margin-top:20px;">
                           <button class="exquisite_button" onclick="window.location.href='/about_us'">
-                            關於我們
+                            關於我
                             <div class="button__horizontal"></div>
                             <div class="button__vertical"></div>
                           </button>
@@ -167,7 +167,7 @@
 
         </div>
       </section>
-      <section class="works">
+      {{-- <section class="works">
           <div id="Recommend">
             <div class="sea layout-box">
               <div class="container version-a">
@@ -211,7 +211,7 @@
               </div>
             </div>
           </div>
-      </section>
+      </section> --}}
 
       <section class="gallery">
           <div id="Gallery">
@@ -234,9 +234,9 @@
                   <div class="text">
                       <h2>作品/習作</h2>
                       <p>畫畫課及平時隨手畫的圖，需要繪圖嗎？ 請聯繫ig哦~</p>
-                      <p>大橘貓(Alikoi/一止魚)</p>
-                      <p>鉤針、印章、刺繡、熱縮片等客製化製作。</p>
-                      <p>小橘貓(Tanuki)</p>
+                      <p>一止魚（Alikoi）</p>
+                      {{-- <p>鉤針、印章、刺繡、熱縮片等客製化製作。</p>
+                      <p>小橘貓(Tanuki)</p> --}}
                       
                       <button class="multi_button type3" onclick="window.location.href='./collections_gallery'">
                         看更多
@@ -269,7 +269,7 @@
                   <div class="text">
                       <h2>Comic</h2>
                       <p>取材自醫檢師同學上班的經驗、趣事等，繪製出醫檢師系列漫畫，也有貼圖即將在Line上販售，近請期待哦~! </p>
-                      <p>大橘貓(Alikoi/一止魚)</p>
+                      <p>一止魚（Alikoi）</p>
                       <button class="multi_button type2" onclick="window.location.href='./comic'">
                         看漫畫
                       </button>
@@ -296,11 +296,11 @@
             </h3>
             <nav class="footer__nav">
               <ul class="footer__nav-list">
-                <li class="footer__nav-item">
+                {{-- <li class="footer__nav-item">
                   <a href="" class="footer__nav-link">
                     手工鉤針
                   </a>
-                </li>
+                </li> --}}
                 <li class="footer__nav-item">
                   <a href="" class="footer__nav-link">
                     繪圖接案
@@ -382,7 +382,8 @@
           </div>
         </div>
           <div class="footer__copyrights">
-            <p>「釣れない時は、魚が考える時間を与えてくれたと思えばいい。」-アーネスト・ヘミングウェイ</p>
+            {{-- <p>「釣れない時は、魚が考える時間を与えてくれたと思えばいい。」-アーネスト・ヘミングウェイ</p> --}}
+            <p>「因為帶著與她的回憶，所以從此不在是一個人。」-一止魚（Alikoi）</p>
             <!-- <p>Réalisé par <a href="https://twitter.com/silvereledev" target="_blank">@SilvereLeDev</a></p> -->
           </div>
       </div>

@@ -16,7 +16,7 @@
     <link href="css/cloud.css" type="text/css" rel="stylesheet"><!--雲-->
     <link href="css/box.css" type="text/css" rel="stylesheet"><!--box-->
 
-    <title>橘貓橘貓窩</title>
+    <title>橘貓窩</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
