@@ -46,7 +46,7 @@
     <nav>
       <ul>
         <li><a href="../">introduction</a></li>
-        <li><a href="./about_me">About us</a></li>
+        <li><a href="./about_me">About me</a></li>
         <li>
           <!-- <a> -->
             <details>

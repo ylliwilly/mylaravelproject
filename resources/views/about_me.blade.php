@@ -89,7 +89,7 @@ body {
                 <span class="tooltip__text">Home</span>
               </div>
           </li>
-          <!--About us-->
+          <!--About me-->
           <li class="nav__item">
             <a href="about_me">
                 <svg class="item__icon" fill="#000000" height="256px" width="256px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve" stroke="#000000" stroke-width="0.00297" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
