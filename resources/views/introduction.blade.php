@@ -135,7 +135,7 @@
                 <div class="container version-b">
                     <div class="images">
                         <div class="grid image-grid-4">
-                              <img class="image-0 " src="picture/little_orange_cat.png"> 
+                              <img class="image-0 " src="picture/Group2.png"> 
                               <img class="image-1 " src="picture/big_orange_cat.png">
                               <!-- <img class="image-2 " src="https://images.unsplash.com/photo-1531504060587-e6811129c0f2?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80">
                               <img class="image-3 " src="https://images.unsplash.com/photo-1443926818681-717d074a57af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1780&amp;q=80"> -->

@@ -425,7 +425,6 @@ img {
     <!-- 側邊欄 END -->
   <div class="button-group filters-button-group">
     <button class="button is-checked" data-filter="*">all</button>
-    {{-- <button class="button" data-filter=".tanuki">小橘貓(Tanuki)</button> --}}
     <button class="button" data-filter=".alikoi">大橘貓(Alikoi/一止魚)</button>
     <button class="button" data-filter=".draw">draw</button>
     <button class="button" data-filter=".handicraft">handicraft</button>
@@ -489,54 +488,6 @@ img {
             <figcaption>線稿練習</figcaption>
           </figure>
         </a>
-    </article>
-    <!-- tanuki -->
-    <article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-        <a class="gallery-link" href="picture/works/1f55b75cd57bdcabdc9ff99bb27a1311.jpg" class="img-responsive">
-          <figure class="gallery-image">
-            <img height="1200" src="picture/works/1f55b75cd57bdcabdc9ff99bb27a1311.jpg" width="1600">
-            <figcaption>彼岸花</figcaption>
-          </figure>
-        </a>
-    </article>
-    <article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-        <a class="gallery-link" href="picture/works/4495f4b8e5279c5320f62d50b791752c.jpg" class="img-responsive">
-          <figure class="gallery-image">
-            <img height="1200" src="picture/works/4495f4b8e5279c5320f62d50b791752c.jpg" width="1600">
-            <figcaption>星空</figcaption>
-          </figure>
-        </a>
-    </article><article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-        <a class="gallery-link" href="picture/works/45195281935bce69cdcf106a9bb18d0f.jpg" class="img-responsive">
-          <figure class="gallery-image">
-            <img height="1200" src="picture/works/45195281935bce69cdcf106a9bb18d0f.jpg" width="1600">
-            <figcaption>花</figcaption>
-          </figure>
-        </a>
-    </article>
-    <article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-        <a class="gallery-link" href="picture/works/c0cfc954c502f9eed8f1283a12e5c55e.jpg" class="img-responsive">
-          <figure class="gallery-image">
-            <img height="1200" src="picture/works/c0cfc954c502f9eed8f1283a12e5c55e.jpg" width="1600">
-            <figcaption>刷</figcaption>
-          </figure>
-        </a>
-      </article>
-    <article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-      <a class="gallery-link" href="picture/works/c7b24467bf0243c7d97b40ac2249f5e7.jpg" class="img-responsive">
-        <figure class="gallery-image">
-          <img height="1200" src="picture/works/c7b24467bf0243c7d97b40ac2249f5e7.jpg" width="1600">
-          <figcaption>水晶球</figcaption>
-        </figure>
-      </a>
-    </article>
-    <article class="tanuki draw watercolor" style="position: absolute; left: 0px; top: 0px;">
-      <a class="gallery-link" href="picture/works/c06927a3f2f5f1ce17e1cbeeee86c738.jpg" class="img-responsive">
-        <figure class="gallery-image">
-          <img height="1200" src="picture/works/c06927a3f2f5f1ce17e1cbeeee86c738.jpg" width="1600">
-          <figcaption>聖誕</figcaption>
-        </figure>
-      </a>
     </article>
     
     <!-- <article class="people rock sea" style="position: absolute; left: 1042px; top: 0px;">
