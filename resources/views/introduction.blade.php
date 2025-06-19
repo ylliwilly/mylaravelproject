@@ -234,9 +234,7 @@
                   <div class="text">
                       <h2>作品/習作</h2>
                       <p>畫畫課及平時隨手畫的圖，需要繪圖嗎？ 請聯繫ig哦~</p>
-                      <p>一止魚（Alikoi）</p>
-                      {{-- <p>鉤針、印章、刺繡、熱縮片等客製化製作。</p>
-                      <p>小橘貓(Tanuki)</p> --}}
+                      <!-- <p>一止魚（Alikoi）</p> -->
                       
                       <button class="multi_button type3" onclick="window.location.href='./collections_gallery'">
                         看更多
@@ -269,7 +267,7 @@
                   <div class="text">
                       <h2>Comic</h2>
                       <p>取材自醫檢師同學上班的經驗、趣事等，繪製出醫檢師系列漫畫，也有貼圖即將在Line上販售，近請期待哦~! </p>
-                      <p>一止魚（Alikoi）</p>
+                      <!-- <p>一止魚（Alikoi）</p> -->
                       <button class="multi_button type2" onclick="window.location.href='./comic'">
                         看漫畫
                       </button>
@@ -296,11 +294,6 @@
             </h3>
             <nav class="footer__nav">
               <ul class="footer__nav-list">
-                {{-- <li class="footer__nav-item">
-                  <a href="" class="footer__nav-link">
-                    手工鉤針
-                  </a>
-                </li> --}}
                 <li class="footer__nav-item">
                   <a href="" class="footer__nav-link">
                     繪圖接案
@@ -353,13 +346,13 @@
                   </a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="https://www.instagram.com/tanuki_aww?igsh=MW0zMnQ0ZnFlNmgxMw==" class="footer__nav-link" target="_blank">
+                  <a href="https://www.instagram.com/mt.creamer/" class="footer__nav-link" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    <span translate="no">Tanuki</span>
+                    <span translate="no">醫檢師奶油球</span>
                   </a>
                 </li>
               </ul>
@@ -373,8 +366,8 @@
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li class="footer__nav-item">
-                  <a href="mailto:orangecats0813@gmail.com" class="footer__nav-link">
-                    orangecats0813@gmail.com
+                  <a href="mailto:alikoifish@gmail.com" class="footer__nav-link">
+                    alikoifish@gmail.com
                   </a>
                 </li>
               </ul>
