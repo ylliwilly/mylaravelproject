@@ -121,7 +121,7 @@
       <div class="strip"></div> -->
     </div>
 
-    <canvas width="600" height="600" id="main_building"></canvas>
+    <canvas width="100%" height="600" id="main_building"></canvas>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
