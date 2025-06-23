@@ -197,6 +197,7 @@
     </script>
 
     <script src="js/WebGL.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gl-matrix@2.8.1/dist/gl-matrix-min.js"></script>
     <!-- 片段著色器（Fragment Shader） -->
     <script id="shader-fs" type="x-shader/x-fragment">
       // shader program
@@ -222,10 +223,11 @@
       //從 buffer 拿出對應的部份作為 attribute 變數 
       attribute vec4 position;
       attribute float size;
+
+      uniform mat4 u_MVPMatrix;
       
       void main(void) {
-        gl_Position = position;
-        gl_PointSize = size;
+        gl_Position = u_MVPMatrix * position;
       }
     </script>
 

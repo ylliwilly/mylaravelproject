@@ -21,6 +21,75 @@
     // 最後為每個 pixel 分別執行 fragment shader
 
 
+    /* 旋轉效果 START */
+    let angleX = 0, angleY = 0;
+    let isDragging = false;
+    let prevX = 0, prevY = 0;
+
+    function setupMouse(canvas) {
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            prevX = e.clientX;
+            prevY = e.clientY;
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            let dx = e.clientX - prevX;
+            let dy = e.clientY - prevY;
+            prevX = e.clientX;
+            prevY = e.clientY;
+            angleY += dx * 0.01;
+            angleX += dy * 0.01;
+            angleX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, angleX));
+        });
+
+        canvas.addEventListener('mouseup', () => isDragging = false);
+        canvas.addEventListener('mouseleave', () => isDragging = false);
+    }
+
+    function getMVPMatrix(angleX, angleY, canvas) {
+        let model = mat4.create();
+        let view = mat4.create();
+        let proj = mat4.create();
+        let mvp = mat4.create();
+
+        let radius = 5;
+        let eye = [
+            radius * Math.sin(angleY) * Math.cos(angleX),
+            radius * Math.sin(angleX),
+            radius * Math.cos(angleY) * Math.cos(angleX)
+        ];
+        let center = [0, 0, 0];
+        let up = [0, 1, 0];
+
+        mat4.lookAt(view, eye, center, up);
+        mat4.perspective(proj, Math.PI / 4, canvas.width / canvas.height, 0.1, 100);
+        mat4.multiply(mvp, view, model);
+        mat4.multiply(mvp, proj, mvp);
+
+        return mvp;
+    }
+
+    function createBuilding(gl, program) {
+        const cube = [
+            // 6 面 x 2 三角形 x 3 頂點
+            // Front
+            -1,-1, 1,  1,-1, 1,  1, 1, 1,
+            -1,-1, 1,  1, 1, 1, -1, 1, 1,
+            // ...後面略，可參考我上面提供的 cube data
+        ];
+
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cube), gl.STATIC_DRAW);
+
+        const position = gl.getAttribLocation(program, "position");
+        gl.enableVertexAttribArray(position);
+        gl.vertexAttribPointer(position, 3, gl.FLOAT, false, 0, 0);
+    }
+    /* 旋轉效果 END */
+
     function initGL() {
         var canvas = document.getElementById('main_building');  
         var gl = canvas.getContext('webgl');
@@ -42,8 +111,12 @@
     }
   
     function draw(gl) {
-        gl.clear(gl.COLOR_BUFFER_BIT); // gl.COLOR_BUFFER_BIT 是用來指定清除顏色的部份
-        gl.drawArrays(gl.POINTS, 0, 3); //三個點的座標是從 buffer 當中依照順序拿取
+        let u_MVPMatrix = gl.getUniformLocation(program, "u_MVPMatrix");
+        let mvp = getMVPMatrix(angleX, angleY, canvas);
+        gl.uniformMatrix4fv(u_MVPMatrix, false, mvp);
+
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); // gl.COLOR_BUFFER_BIT 是用來指定清除顏色的部份
+        gl.drawArrays(gl.TRIANGLES, 0, 36); //三個點的座標是從 buffer 當中依照順序拿取
     }
 
     function createShaders(gl, type) {
@@ -115,9 +188,16 @@
     }
 
     function main() {
-        var gl = initGL();
-        initShaders(gl)
-        draw(gl);
+        const gl = initGL();
+        const program = initShaders(gl);
+        createBuilding(gl, program); // ← 你把建築畫進來
+        setupMouse(gl.canvas);       // ← 加入滑鼠控制
+
+        function loop() {
+            draw(gl, program, gl.canvas);
+            requestAnimationFrame(loop);
+        }
+        loop();
     }
 
     main();
