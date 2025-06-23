@@ -221,8 +221,8 @@
                       <div class="grid image-grid-4">
                             <img class="image-0 " src="picture\water_flower_girl.jpg"> 
                             <img class="image-1 " src="picture\bird_bubble.jpg">
-                            <img class="image-2 " src="picture\works\1f55b75cd57bdcabdc9ff99bb27a1311.jpg">
-                            <img class="image-3 " src="picture\works\c0cfc954c502f9eed8f1283a12e5c55e.jpg">
+                            <img class="image-2 " src="picture\face.jpg">
+                            <img class="image-3 " src="picture\sketch.jpg">
                         </div>
                   </div>
                   <div class="numbering">
