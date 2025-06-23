@@ -221,7 +221,7 @@
                       <div class="grid image-grid-4">
                             <img class="image-0 " src="picture\water_flower_girl.jpg"> 
                             <img class="image-1 " src="picture\bird_bubble.jpg">
-                            <img class="image-2 " src="picture\face.jpg">
+                            <img class="image-2 " src="picture\line.jpg">
                             <img class="image-3 " src="picture\sketch.jpg">
                         </div>
                   </div>
