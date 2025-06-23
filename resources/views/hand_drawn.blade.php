@@ -370,21 +370,26 @@
         const strL = 'picture/';
         const strR = "";//'?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ';
         const imgs = [
-        {
-          descripcion: '素描練習',
-          titulo: '素描',
-          url: strL + 'sketch_1.gif' + strR 
-        },
-        {
-          descripcion: '素描畫人',
-          titulo: '素描',
-          url: strL + 'sketch.jpg' + strR 
-        },
-        {
-          descripcion: '水彩練習',
-          titulo: '水彩',
-          url: strL + 'watercolor.jpg' + strR 
-        },
+          {
+            descripcion: '素描練習',
+            titulo: '素描',
+            url: strL + 'sketch_1.gif' + strR 
+          },
+          {
+            descripcion: '素描畫人',
+            titulo: '素描',
+            url: strL + 'sketch.jpg' + strR 
+          },
+          {
+            descripcion: '水彩練習',
+            titulo: '水彩',
+            url: strL + 'watercolor.jpg' + strR 
+          },
+          {
+            descripcion: '樹水彩',
+            titulo: '水彩',
+            url: strL + 'watercolor_tree.jpg' + strR 
+          },
         ];
 
 
