@@ -358,27 +358,9 @@
 
     <section class="galeria vis">
         <div class="container">
-          <h1 class="tit">畫廊(作品/習作)</h1>
-          <h2>Alikoi(一止魚/大橘貓)</h2>
+          <h1 class="tit">手繪(習作)</h1>
+          <h2>素描/水彩</h2>
           <div class="contenedorImgs">
-        <!-- <div class="imagen" style="background-image:url('background.gif')">
-          <p class="nombre">窗</p>
-        </div>
-        <div class="imagen" style="background-image:url('mother_card.jpg')">
-          <p class="nombre">母親節</p>
-        </div>
-        <div class="imagen" style="background-image:url('bird_bubble.jpg')">
-          <p class="nombre">桌布</p>
-        </div>
-        <div class="imagen" style="background-image:url('big_orange_cat.png')">
-          <p class="nombre">大橘貓</p>
-        </div>
-        <div class="imagen" style="background-image:url('water_flower_girl.jpg')">
-          <p class="nombre">水</p>
-        </div>
-        <div class="imagen" style="background-image:url('face.jpg')">
-          <p class="nombre">倒影</p>
-        </div> -->
       </section>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -389,39 +371,21 @@
         const strR = "";//'?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ';
         const imgs = [
         {
-          descripcion: '奇幻風格動圖',
-          titulo: '窗',
-          url: strL + 'background.gif' + strR },
-
+          descripcion: '素描練習',
+          titulo: '素描',
+          url: strL + 'sketch_1.gif' + strR 
+        },
         {
-          descripcion: '祝全天下的好媽媽們母親節快樂',
-          titulo: '母親節',
-          url: strL + 'mother_card.jpg' + strR },
-
+          descripcion: '素描畫人',
+          titulo: '素描',
+          url: strL + 'sketch.jpg' + strR 
+        },
         {
-          descripcion: '大嘴鳥+葉子+泡泡',
-          titulo: '桌布',
-          url: strL + 'bird_bubble.jpg' + strR },
-
-        {
-          descripcion: '本人在下彼人我',
-          titulo: '大橘貓',
-          url: strL + 'big_orange_cat.png' + strR },
-
-        {
-        descripcion: '人體練習+水花',
-        titulo: '水',
-        url: strL + 'water_flower_girl.jpg' + strR },
-
-        {
-          descripcion: '似顏繪練習',
-          titulo: '倒影',
-          url: strL + 'face.jpg' + strR },
-
-        {
-          descripcion: '線稿練習',
-          titulo: '純線',
-          url: strL + 'line.jpg' + strR }];
+          descripcion: '水彩練習',
+          titulo: '水彩',
+          url: strL + 'watercolor.jpg' + strR 
+        },
+        ];
 
 
 
