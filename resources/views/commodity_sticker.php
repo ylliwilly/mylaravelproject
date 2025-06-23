@@ -121,7 +121,7 @@
       <div class="strip"></div> -->
     </div>
 
-    <canvas width="600" height="600" id="main_building">
+    <canvas width="600" height="600" id="main_building"></canvas>
 
     <div class="main_building">
 
