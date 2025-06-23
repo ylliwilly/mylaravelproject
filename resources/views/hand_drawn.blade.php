@@ -373,7 +373,7 @@
           {
             descripcion: '素描練習',
             titulo: '素描',
-            url: strL + 'sketch_1.gif' + strR 
+            url: strL + 'sketch_1.jpg' + strR 
           },
           {
             descripcion: '素描畫人',
