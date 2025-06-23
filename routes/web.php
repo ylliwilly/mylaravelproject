@@ -46,7 +46,8 @@ Route::controller(WebController::class)->group(function ()
     Route::get('/commodity_sales', 'jump_Commodity_Sales'); //商品頁
     Route::get('/commodity_sticker', 'jump_Commodity_Sticker'); //貼圖
 
-    Route::get('/Alikoi', 'jump_Alikoi'); //小
+    Route::get('/Alikoi', 'jump_Alikoi'); //一止魚
+    Route::get('/draw', 'jump_hand'); //手繪
 
     Route::get('/register', 'jump_Register'); //註冊頁
     

@@ -521,7 +521,7 @@
           <img src="./picture/bird_bubble.jpg" alt="Brohm Lake">
         </figure>
 
-        <button>View</button>
+        <button onclick="location.href='/draw'">View</button>
 
         <!-- can add svg here and remove these eight spans -->
         <div class="design-container">

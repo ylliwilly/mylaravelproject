@@ -83,6 +83,10 @@ class WebController extends Controller
     {
         return view('Alikoi_gallery');
     }
+    public function jump_hand(Request $request)
+    {
+        return view('hand_drawn');
+    }
 
     public function jump_Register(Request $request)
     {
