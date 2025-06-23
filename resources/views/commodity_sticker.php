@@ -122,14 +122,6 @@
     </div>
 
     <canvas width="600" height="600" id="main_building"></canvas>
-
-    <div class="main_building">
-
-    </div>
-
-    <div class="buildings">
-
-    </div>
     
     <script type="text/javascript" src="js/hamburger_menu.js"></script>
     <script type="text/javascript">
